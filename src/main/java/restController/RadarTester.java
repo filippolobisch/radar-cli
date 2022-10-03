@@ -145,7 +145,9 @@ public class RadarTester {
 				}
 
 				// Inject random PCP
-				String[] rulesToInject = { "CreateUnauthorizedAccess", "StoreDataOutsideEU" };
+				int pcpRuleIndex = PCPTypes.STOREDATAOUTSIDEEU;
+				String[] rulesToInject = new PCPChooser().getRulesToInject(pcpRuleIndex);
+
 				for (int j = 0; j <= amountOfPCPInstanceInjections; j++) {
 					// Bei wenigen PCP Instanzen erklären, dass es dann sehr schnell geht
 					int ruleToInject = ThreadLocalRandom.current().nextInt(0, 2);
