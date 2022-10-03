@@ -45,8 +45,9 @@ public class RiskFinder {
 				maxSeconds);
 
 		// Not used for performance testing
-//		this.lookForConstraints(runtimeModelLogic.getLoader().getCloudEnvironmentsMonitored().get(1l));
-//		this.lookForImprovements(runtimeModelLogic.getLoader().getCloudEnvironmentsMonitored().get(1l), index, aa, maxSeconds);
+		// this.lookForConstraints(runtimeModelLogic.getLoader().getCloudEnvironmentsMonitored().get(1l));
+		// this.lookForImprovements(runtimeModelLogic.getLoader().getCloudEnvironmentsMonitored().get(1l),
+		// index, aa, maxSeconds);
 		return datas;
 	}
 
@@ -155,8 +156,11 @@ public class RiskFinder {
 				endTime = 0;
 				elapsedTime = 0;
 				System.out.println("Timer stopped");
-//				String[] values = {String.valueOf((double)((timestampAfterAdaptationSearch - timestampZERO)/ 1_000_000_000.0)), enlargement, String.valueOf(0), String.valueOf(adaptationFinder.getMaxFuncInOriginModel()), String.valueOf(adaptationFinder.getCostInOriginModel())};
-//				datas.add(values);
+				// String[] values = {String.valueOf((double)((timestampAfterAdaptationSearch -
+				// timestampZERO)/ 1_000_000_000.0)), enlargement, String.valueOf(0),
+				// String.valueOf(adaptationFinder.getMaxFuncInOriginModel()),
+				// String.valueOf(adaptationFinder.getCostInOriginModel())};
+				// datas.add(values);
 			}
 		} else {
 			// check if the list of adaptations is empty
@@ -230,7 +234,8 @@ public class RiskFinder {
 					// set proposal graph
 					CloudEnvironment proposal = adaptation.getRuntimeModel();
 
-//					System.out.println("Proposal created:\n" + runtimeModelLogic.returnentiremodelasjson(proposal));
+					// System.out.println("Proposal created:\n" +
+					// runtimeModelLogic.returnentiremodelasjson(proposal));
 
 					System.out.println("Executed adaptation(s):");
 					int[] adaptationCaseNumber = new int[adaptation.getAtomicAdaptationArray().length];
@@ -280,7 +285,7 @@ public class RiskFinder {
 					datas = executeAdaptations2(adaptation, datas, enlargement, Integer.valueOf(amountOfPCPInstances));
 					// save new run-time model as file for testing purposes
 					this.saveGraph(new EGraphImpl(proposal), 1);
-//					this.lookForRisksDEMO(1l);
+					// this.lookForRisksDEMO(1l);
 					// break out of method, because there is already an accepted solution
 					return datas;
 				}
@@ -304,10 +309,10 @@ public class RiskFinder {
 				}
 				double random = Math.random();
 				String newAmountOfPCPInstances = "";
-				if(ar.length-i > 3 && random < 0.5) {
+				if (ar.length - i > 3 && random < 0.5) {
 					newAmountOfPCPInstances = String.valueOf(maxAmountOfPCPInstanes - (i + 2));
 					i++;
-				}else {
+				} else {
 					newAmountOfPCPInstances = String.valueOf(maxAmountOfPCPInstanes - (i + 1));
 				}
 				long timestamp = System.nanoTime();

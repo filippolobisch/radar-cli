@@ -63,7 +63,7 @@ public class EnlargeModelController {
 	private RiskFinder riskFinder;
 
 	private int globalNameInteger;
-	
+
 	@Autowired
 	EMFModelLoad loader;
 	static final String fileName = "CloudExample.cloudmodel";
@@ -108,7 +108,6 @@ public class EnlargeModelController {
 			String nodeType = listWithPossibleNodeTypes.get(randomNodeTypeInt);
 			EObject randomNode = this.createNewEObject(nodeType);
 
-			
 			this.setAttributes(randomNode);
 
 			cloudEnvironment.getTosca_nodes_root().add((tosca_nodes_Root) randomNode);
@@ -224,7 +223,8 @@ public class EnlargeModelController {
 							l.add(o);
 						}
 					} catch (ClassCastException e) {
-//						System.err.println("Class Name in Catch Block: " + ((EEnumImpl) o).getName());
+						// System.err.println("Class Name in Catch Block: " + ((EEnumImpl)
+						// o).getName());
 					}
 				}
 				int randomNodeFromL = (int) (Math.random() * (l.size() - 1));
@@ -303,9 +303,9 @@ public class EnlargeModelController {
 
 	private ArrayList<String> fillListWithPossibleNodes(ArrayList<String> list) {
 		list.add("Compute");
-		list.add("PaaSOperator"); // needs Compute object 
-		list.add("IaaSOperator"); // needs Compute object 
-		list.add("SaaSOperator"); // needs SoftwareComponent object 
+		list.add("PaaSOperator"); // needs Compute object
+		list.add("IaaSOperator"); // needs Compute object
+		list.add("SaaSOperator"); // needs SoftwareComponent object
 		list.add("DataSubject"); // needs Record object
 		list.add("DataProcessor");
 		list.add("DataController");
@@ -346,7 +346,7 @@ public class EnlargeModelController {
 		}
 		CloudEnvironment enlargedModel = (CloudEnvironment) graph.getRoots().get(0);
 		runtimeModelLogic.getLoader().setCloudEnvironmentsMonitored(enlargedModel, 1L);
-//		riskFinder.lookForRisksDEMO(1l);
+		// riskFinder.lookForRisksDEMO(1l);
 
 		// returns ResponseCode
 		return response;
