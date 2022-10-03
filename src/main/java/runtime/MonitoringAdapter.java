@@ -67,9 +67,10 @@ public class MonitoringAdapter implements Runnable {
 					if (somethingChanged()) {
 						// RADAR + Execution
 						System.out.println("Something has changed!!!!");
-						CloudEnvironment ce = runtimeModelLogic.getLoader().getCloudEnvironmentsMonitored().get(serviceInstanceId);
+						CloudEnvironment ce = runtimeModelLogic.getLoader().getCloudEnvironmentsMonitored()
+								.get(serviceInstanceId);
 						riskFinder.lookForRisks(ce, serviceInstanceId, AdaptationAlgorithm.BestFirstSearch, "", 0, 10);
-					}else {
+					} else {
 						System.out.println("Nothing has changed!!!!");
 					}
 					gateway.getExecutor().schedule(new MonitoringAdapter(gateway, serviceInstanceId, pingAddress,
@@ -86,7 +87,7 @@ public class MonitoringAdapter implements Runnable {
 		}
 	}
 
-	//After 3 missed Pings Adapter will be deleted
+	// After 3 missed Pings Adapter will be deleted
 	public void missedPing() {
 		System.out.println("Ping Missed to " + pingAddress);
 		if (++missedPings > 2) {
@@ -97,7 +98,8 @@ public class MonitoringAdapter implements Runnable {
 		}
 	}
 
-	//Searches for changes between actual instance and monitored system - true if something changed
+	// Searches for changes between actual instance and monitored system - true if
+	// something changed
 	public boolean somethingChanged() {
 		String model = "";
 		try {
@@ -112,20 +114,22 @@ public class MonitoringAdapter implements Runnable {
 			while ((temp = bodyReader.readLine()) != null) {
 				body += temp;
 			}
-//			System.out.println("Body: " + body);
+			// System.out.println("Body: " + body);
 			String decodedWithEqualsSign;
 			decodedWithEqualsSign = URLDecoder.decode(body, "UTF-8");
 			String decoded = StringUtils.strip(decodedWithEqualsSign, "=");
 			model = decoded;
-//			System.out.println("Responsetime in sec: " + (System.currentTimeMillis() - timestamp) / 1000f);
+			// System.out.println("Responsetime in sec: " + (System.currentTimeMillis() -
+			// timestamp) / 1000f);
 		} catch (Exception e) {
 			System.out.println("Problem to get the model from Application");
 			System.err.println(e);
 		}
-		if(!model.equals("")) { //Received Model
+		if (!model.equals("")) { // Received Model
 			CloudEnvironment newInstance = null;
 			HenshinResourceSet resourceSet = new HenshinResourceSet(Constants.RUNTIME_MODEL_PATH);
-			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("cloudmodel", new XMIResourceFactoryImpl());
+			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("cloudmodel",
+					new XMIResourceFactoryImpl());
 			try {
 				newInstance = (CloudEnvironment) runtimeModelLogic.getLoader().loadEObjectFromString(model);
 				resourceSet.saveEObject(newInstance, "temp.cloudmodel");
@@ -133,19 +137,22 @@ public class MonitoringAdapter implements Runnable {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if(newInstance != null) {
-				EGraph graphActual = new EGraphImpl(resourceSet.getResource("ServiceInstance" + serviceInstanceId + ".cloudmodel"));
-				EGraph graphNew = new EGraphImpl(resourceSet.getResource("temp.cloudmodel"));			
-				if(!new EqualityHelper().equals(graphActual.getRoots().get(0), graphNew.getRoots().get(0))) {
+			if (newInstance != null) {
+				EGraph graphActual = new EGraphImpl(
+						resourceSet.getResource("ServiceInstance" + serviceInstanceId + ".cloudmodel"));
+				EGraph graphNew = new EGraphImpl(resourceSet.getResource("temp.cloudmodel"));
+				if (!new EqualityHelper().equals(graphActual.getRoots().get(0), graphNew.getRoots().get(0))) {
 					File file = new File("models/runtime_models/temp.cloudmodel");
 					file.delete();
 					runtimeModelLogic.getLoader().setCloudEnvironmentsMonitored(newInstance, serviceInstanceId);
 					return true;
-				}else {
+				} else {
 					File file = new File("models/runtime_models/temp.cloudmodel");
 					file.delete();
 				}
-			}else {System.out.println("Wasn't able to load cloudenvironment out of String");}
+			} else {
+				System.out.println("Wasn't able to load cloudenvironment out of String");
+			}
 		}
 		return false;
 	}

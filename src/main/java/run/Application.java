@@ -7,15 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import restController.RadarTester;
 import runtime.LoggingInterface;
 
-@SpringBootApplication(scanBasePackages= {"restController", "runtime", "tosca"})
+@SpringBootApplication(scanBasePackages = { "restController", "runtime", "tosca" })
 public class Application {
-	
-	@Autowired
-	LoggingInterface loggingInterface;
-	
+
+    @Autowired
+    LoggingInterface loggingInterface;
+
     public static void main(String[] args) {
-    	LoggingInterface.setLogToGraylog(false); //True = loggingToGraylogServer
+        LoggingInterface.setLogToGraylog(false); // True = loggingToGraylogServer
         SpringApplication.run(Application.class, args);
     }
 }
-

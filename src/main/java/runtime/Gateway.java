@@ -62,17 +62,18 @@ public class Gateway {
 	}
 
 	// Creates a new Adapter for ServiceInstanceID, Starts Monitoring of its
-		// instance
-		public void registerNewAdapterTestApplication(long serviceInstanceId, String monitoringRestUrl,
-				String executionRestUrl) {
-			instanceIdToExecutionRestUrl.put(serviceInstanceId, executionRestUrl);
-			instanceIdToMonitoringRestUrl.put(serviceInstanceId, monitoringRestUrl);
-			LinkedList<ExecutionAdapter> executionAdapters = new LinkedList<ExecutionAdapter>();
-			executionAdapters.add(new ExecutionAdapterTestApplication(serviceInstanceId, this, runtimeModelLogic));
-			instanceIdToExecutionAdapters.put(serviceInstanceId, executionAdapters);
-		}
-	
-	// Stops Monitoring for ServiceInstanceID and also deletes the instance in the runtimeModel
+	// instance
+	public void registerNewAdapterTestApplication(long serviceInstanceId, String monitoringRestUrl,
+			String executionRestUrl) {
+		instanceIdToExecutionRestUrl.put(serviceInstanceId, executionRestUrl);
+		instanceIdToMonitoringRestUrl.put(serviceInstanceId, monitoringRestUrl);
+		LinkedList<ExecutionAdapter> executionAdapters = new LinkedList<ExecutionAdapter>();
+		executionAdapters.add(new ExecutionAdapterTestApplication(serviceInstanceId, this, runtimeModelLogic));
+		instanceIdToExecutionAdapters.put(serviceInstanceId, executionAdapters);
+	}
+
+	// Stops Monitoring for ServiceInstanceID and also deletes the instance in the
+	// runtimeModel
 	public void forgetAdapter(long serviceInstanceId) {
 		System.out.println("ExecutionGatewayAdapter with id " + serviceInstanceId + " and address "
 				+ instanceIdToExecutionRestUrl.get(serviceInstanceId) + " forgotten!");
