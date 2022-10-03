@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_sZwB8L0MEeqwCtv2Ps6WoA">
+  <imports href="www.CloudModel.com#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_BiruEL0OEeqwCtv2Ps6WoA" name="Adaptation_1_1">
+    <lhs xmi:id="_BitjQL0OEeqwCtv2Ps6WoA" name="Lhs">
+      <nodes xmi:id="_FK7AEL0OEeqwCtv2Ps6WoA" incoming="_f9lxUL0OEeqwCtv2Ps6WoA" outgoing="_gT8b0L0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_F_9KoL0OEeqwCtv2Ps6WoA" incoming="_fqw78L0OEeqwCtv2Ps6WoA" outgoing="_f9lxUL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_GxiYkL0OEeqwCtv2Ps6WoA" outgoing="_fTDmkL0OEeqwCtv2Ps6WoA _fqw78L0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_dzR14L0OEeqwCtv2Ps6WoA" value="true">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_HvzXoL0OEeqwCtv2Ps6WoA" incoming="_fTDmkL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DataSubject"/>
+        <attributes xmi:id="_bRB7kL0OEeqwCtv2Ps6WoA" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//DataSpecificRole/location"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_IbYrQL0OEeqwCtv2Ps6WoA" incoming="_gT8b0L0OEeqwCtv2Ps6WoA _kFW38L0OEeqwCtv2Ps6WoA" outgoing="_l6yIgL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_JG_NAL0OEeqwCtv2Ps6WoA" incoming="_l6yIgL0OEeqwCtv2Ps6WoA" outgoing="_g7GicL0OEeqwCtv2Ps6WoA _kFW38L0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_J19L0L0OEeqwCtv2Ps6WoA" incoming="_g7GicL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Compute"/>
+      </nodes>
+      <edges xmi:id="_fTDmkL0OEeqwCtv2Ps6WoA" source="_GxiYkL0OEeqwCtv2Ps6WoA" target="_HvzXoL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record/belongsTo"/>
+      </edges>
+      <edges xmi:id="_fqw78L0OEeqwCtv2Ps6WoA" source="_GxiYkL0OEeqwCtv2Ps6WoA" target="_F_9KoL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_f9lxUL0OEeqwCtv2Ps6WoA" source="_F_9KoL0OEeqwCtv2Ps6WoA" target="_FK7AEL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_gT8b0L0OEeqwCtv2Ps6WoA" source="_FK7AEL0OEeqwCtv2Ps6WoA" target="_IbYrQL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_g7GicL0OEeqwCtv2Ps6WoA" source="_JG_NAL0OEeqwCtv2Ps6WoA" target="_J19L0L0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+      <edges xmi:id="_l6yIgL0OEeqwCtv2Ps6WoA" source="_IbYrQL0OEeqwCtv2Ps6WoA" target="_JG_NAL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DBMS/accessedBySoftwareComponent"/>
+      </edges>
+      <edges xmi:id="_kFW38L0OEeqwCtv2Ps6WoA" source="_JG_NAL0OEeqwCtv2Ps6WoA" target="_IbYrQL0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent/accessDBMS"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_aSWs0L0OEeqwCtv2Ps6WoA">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_aSWs0b0OEeqwCtv2Ps6WoA">
+          <conclusion xmi:id="_aSWs0r0OEeqwCtv2Ps6WoA">
+            <nodes xmi:id="_aSWs070OEeqwCtv2Ps6WoA">
+              <type href="www.CloudModel.com#//Compute"/>
+              <attributes xmi:id="_WU-4UL0OEeqwCtv2Ps6WoA" value="&quot;EU&quot;">
+                <type href="www.CloudModel.com#//Compute/jurisdiction"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_kp3TML0OEeqwCtv2Ps6WoA">
+              <type href="www.CloudModel.com#//SoftwareComponent"/>
+            </nodes>
+            <nodes xmi:id="_kp3TMr0OEeqwCtv2Ps6WoA">
+              <type href="www.CloudModel.com#//DBMS"/>
+            </nodes>
+          </conclusion>
+          <mappings xmi:id="_aSWs1b0OEeqwCtv2Ps6WoA" origin="_J19L0L0OEeqwCtv2Ps6WoA" image="_aSWs070OEeqwCtv2Ps6WoA"/>
+          <mappings xmi:id="_kp3TMb0OEeqwCtv2Ps6WoA" origin="_JG_NAL0OEeqwCtv2Ps6WoA" image="_kp3TML0OEeqwCtv2Ps6WoA"/>
+          <mappings xmi:id="_kp3TM70OEeqwCtv2Ps6WoA" origin="_IbYrQL0OEeqwCtv2Ps6WoA" image="_kp3TMr0OEeqwCtv2Ps6WoA"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_BitjQb0OEeqwCtv2Ps6WoA" name="Rhs">
+      <nodes xmi:id="_FK7AEb0OEeqwCtv2Ps6WoA" incoming="_f9lxUb0OEeqwCtv2Ps6WoA" outgoing="_gT8b0b0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_F_9Kob0OEeqwCtv2Ps6WoA" incoming="_fqw78b0OEeqwCtv2Ps6WoA" outgoing="_f9lxUb0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_GxiYkb0OEeqwCtv2Ps6WoA" outgoing="_fTDmkb0OEeqwCtv2Ps6WoA _fqw78b0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_dzR14b0OEeqwCtv2Ps6WoA" value="true">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_HvzXob0OEeqwCtv2Ps6WoA" incoming="_fTDmkb0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DataSubject"/>
+        <attributes xmi:id="_bRCioL0OEeqwCtv2Ps6WoA" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//DataSpecificRole/location"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_IbYrQb0OEeqwCtv2Ps6WoA" incoming="_gT8b0b0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_JG_NAb0OEeqwCtv2Ps6WoA" outgoing="_g7Gicb0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_J19L0b0OEeqwCtv2Ps6WoA" incoming="_g7Gicb0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Compute"/>
+      </nodes>
+      <edges xmi:id="_fTDmkb0OEeqwCtv2Ps6WoA" source="_GxiYkb0OEeqwCtv2Ps6WoA" target="_HvzXob0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record/belongsTo"/>
+      </edges>
+      <edges xmi:id="_fqw78b0OEeqwCtv2Ps6WoA" source="_GxiYkb0OEeqwCtv2Ps6WoA" target="_F_9Kob0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_f9lxUb0OEeqwCtv2Ps6WoA" source="_F_9Kob0OEeqwCtv2Ps6WoA" target="_FK7AEb0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_gT8b0b0OEeqwCtv2Ps6WoA" source="_FK7AEb0OEeqwCtv2Ps6WoA" target="_IbYrQb0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_g7Gicb0OEeqwCtv2Ps6WoA" source="_JG_NAb0OEeqwCtv2Ps6WoA" target="_J19L0b0OEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_FK7AEr0OEeqwCtv2Ps6WoA" origin="_FK7AEL0OEeqwCtv2Ps6WoA" image="_FK7AEb0OEeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_F_9Kor0OEeqwCtv2Ps6WoA" origin="_F_9KoL0OEeqwCtv2Ps6WoA" image="_F_9Kob0OEeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_GxiYkr0OEeqwCtv2Ps6WoA" origin="_GxiYkL0OEeqwCtv2Ps6WoA" image="_GxiYkb0OEeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_HvzXor0OEeqwCtv2Ps6WoA" origin="_HvzXoL0OEeqwCtv2Ps6WoA" image="_HvzXob0OEeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_IbYrQr0OEeqwCtv2Ps6WoA" origin="_IbYrQL0OEeqwCtv2Ps6WoA" image="_IbYrQb0OEeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_JG_NAr0OEeqwCtv2Ps6WoA" origin="_JG_NAL0OEeqwCtv2Ps6WoA" image="_JG_NAb0OEeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_J19L0r0OEeqwCtv2Ps6WoA" origin="_J19L0L0OEeqwCtv2Ps6WoA" image="_J19L0b0OEeqwCtv2Ps6WoA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_v56jwL0REeqwCtv2Ps6WoA" name="Adaptation_1_2">
+    <parameters xmi:id="_F_kZAL0iEeqwCtv2Ps6WoA" name="name" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_v56jwb0REeqwCtv2Ps6WoA" name="Lhs">
+      <nodes xmi:id="_v56jwr0REeqwCtv2Ps6WoA" incoming="_v56jzb0REeqwCtv2Ps6WoA" outgoing="_v56jzr0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_v56jw70REeqwCtv2Ps6WoA" incoming="_v56jzL0REeqwCtv2Ps6WoA" outgoing="_v56jzb0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_v56jxL0REeqwCtv2Ps6WoA" outgoing="_v56jy70REeqwCtv2Ps6WoA _v56jzL0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_v56jxb0REeqwCtv2Ps6WoA" value="true">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_v56jxr0REeqwCtv2Ps6WoA" incoming="_v56jy70REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DataSubject"/>
+        <attributes xmi:id="_v56jx70REeqwCtv2Ps6WoA" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//DataSpecificRole/location"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_v56jyL0REeqwCtv2Ps6WoA" incoming="_v56jzr0REeqwCtv2Ps6WoA _047bcL0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_v56jyb0REeqwCtv2Ps6WoA" incoming="_JXdVIL0SEeqwCtv2Ps6WoA" outgoing="_v56jz70REeqwCtv2Ps6WoA _047bcL0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_v56jyr0REeqwCtv2Ps6WoA" incoming="_v56jz70REeqwCtv2Ps6WoA" outgoing="_JXdVIL0SEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Compute"/>
+      </nodes>
+      <nodes xmi:id="_6b7J8L0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Compute"/>
+        <attributes xmi:id="_7ZxSQL0REeqwCtv2Ps6WoA" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//Compute/jurisdiction"/>
+        </attributes>
+        <attributes xmi:id="_HAlKEL0iEeqwCtv2Ps6WoA" value="name">
+          <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_v56jy70REeqwCtv2Ps6WoA" source="_v56jxL0REeqwCtv2Ps6WoA" target="_v56jxr0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record/belongsTo"/>
+      </edges>
+      <edges xmi:id="_v56jzL0REeqwCtv2Ps6WoA" source="_v56jxL0REeqwCtv2Ps6WoA" target="_v56jw70REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_v56jzb0REeqwCtv2Ps6WoA" source="_v56jw70REeqwCtv2Ps6WoA" target="_v56jwr0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_v56jzr0REeqwCtv2Ps6WoA" source="_v56jwr0REeqwCtv2Ps6WoA" target="_v56jyL0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_v56jz70REeqwCtv2Ps6WoA" source="_v56jyb0REeqwCtv2Ps6WoA" target="_v56jyr0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+      <edges xmi:id="_047bcL0REeqwCtv2Ps6WoA" source="_v56jyb0REeqwCtv2Ps6WoA" target="_v56jyL0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent/accessDBMS"/>
+      </edges>
+      <edges xmi:id="_JXdVIL0SEeqwCtv2Ps6WoA" source="_v56jyr0REeqwCtv2Ps6WoA" target="_v56jyb0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_v56j0r0REeqwCtv2Ps6WoA">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_v56j070REeqwCtv2Ps6WoA">
+          <conclusion xmi:id="_v56j1L0REeqwCtv2Ps6WoA">
+            <nodes xmi:id="_v56j1b0REeqwCtv2Ps6WoA">
+              <type href="www.CloudModel.com#//Compute"/>
+              <attributes xmi:id="_v56j1r0REeqwCtv2Ps6WoA" value="&quot;EU&quot;">
+                <type href="www.CloudModel.com#//Compute/jurisdiction"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_v56j170REeqwCtv2Ps6WoA">
+              <type href="www.CloudModel.com#//SoftwareComponent"/>
+            </nodes>
+            <nodes xmi:id="_v56j2L0REeqwCtv2Ps6WoA">
+              <type href="www.CloudModel.com#//DBMS"/>
+            </nodes>
+          </conclusion>
+          <mappings xmi:id="_v56j2b0REeqwCtv2Ps6WoA" origin="_v56jyr0REeqwCtv2Ps6WoA" image="_v56j1b0REeqwCtv2Ps6WoA"/>
+          <mappings xmi:id="_v56j2r0REeqwCtv2Ps6WoA" origin="_v56jyb0REeqwCtv2Ps6WoA" image="_v56j170REeqwCtv2Ps6WoA"/>
+          <mappings xmi:id="_v56j270REeqwCtv2Ps6WoA" origin="_v56jyL0REeqwCtv2Ps6WoA" image="_v56j2L0REeqwCtv2Ps6WoA"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_v56j3L0REeqwCtv2Ps6WoA" name="Rhs">
+      <nodes xmi:id="_v56j3b0REeqwCtv2Ps6WoA" incoming="_v56j6L0REeqwCtv2Ps6WoA" outgoing="_v56j6b0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_v56j3r0REeqwCtv2Ps6WoA" incoming="_v56j570REeqwCtv2Ps6WoA" outgoing="_v56j6L0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_v56j370REeqwCtv2Ps6WoA" outgoing="_v56j5r0REeqwCtv2Ps6WoA _v56j570REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_v56j4L0REeqwCtv2Ps6WoA" value="true">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_v56j4b0REeqwCtv2Ps6WoA" incoming="_v56j5r0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DataSubject"/>
+        <attributes xmi:id="_v56j4r0REeqwCtv2Ps6WoA" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//DataSpecificRole/location"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_v56j470REeqwCtv2Ps6WoA" incoming="_v56j6b0REeqwCtv2Ps6WoA _047bcb0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_v56j5L0REeqwCtv2Ps6WoA" outgoing="_047bcb0REeqwCtv2Ps6WoA _HACKwL0SEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_v56j5b0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Compute"/>
+      </nodes>
+      <nodes xmi:id="_6b7J8b0REeqwCtv2Ps6WoA" incoming="_HACKwL0SEeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Compute"/>
+        <attributes xmi:id="_7ZxSQb0REeqwCtv2Ps6WoA" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//Compute/jurisdiction"/>
+        </attributes>
+        <attributes xmi:id="_HAlKEb0iEeqwCtv2Ps6WoA" value="name">
+          <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_v56j5r0REeqwCtv2Ps6WoA" source="_v56j370REeqwCtv2Ps6WoA" target="_v56j4b0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record/belongsTo"/>
+      </edges>
+      <edges xmi:id="_v56j570REeqwCtv2Ps6WoA" source="_v56j370REeqwCtv2Ps6WoA" target="_v56j3r0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_v56j6L0REeqwCtv2Ps6WoA" source="_v56j3r0REeqwCtv2Ps6WoA" target="_v56j3b0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_v56j6b0REeqwCtv2Ps6WoA" source="_v56j3b0REeqwCtv2Ps6WoA" target="_v56j470REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_047bcb0REeqwCtv2Ps6WoA" source="_v56j5L0REeqwCtv2Ps6WoA" target="_v56j470REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent/accessDBMS"/>
+      </edges>
+      <edges xmi:id="_HACKwL0SEeqwCtv2Ps6WoA" source="_v56j5L0REeqwCtv2Ps6WoA" target="_6b7J8b0REeqwCtv2Ps6WoA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_IHg88L0iEeqwCtv2Ps6WoA" name="condition" conditionText="name!=&quot;A :Compute&quot;"/>
+    <attributeConditions xmi:id="_nUAOIL0iEeqwCtv2Ps6WoA" name="condition2" conditionText="name!=&quot;:Compute&quot;"/>
+    <mappings xmi:id="_v56j670REeqwCtv2Ps6WoA" origin="_v56jwr0REeqwCtv2Ps6WoA" image="_v56j3b0REeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_v56j7L0REeqwCtv2Ps6WoA" origin="_v56jw70REeqwCtv2Ps6WoA" image="_v56j3r0REeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_v56j7b0REeqwCtv2Ps6WoA" origin="_v56jxL0REeqwCtv2Ps6WoA" image="_v56j370REeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_v56j7r0REeqwCtv2Ps6WoA" origin="_v56jxr0REeqwCtv2Ps6WoA" image="_v56j4b0REeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_v56j770REeqwCtv2Ps6WoA" origin="_v56jyL0REeqwCtv2Ps6WoA" image="_v56j470REeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_v56j8L0REeqwCtv2Ps6WoA" origin="_v56jyb0REeqwCtv2Ps6WoA" image="_v56j5L0REeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_v56j8b0REeqwCtv2Ps6WoA" origin="_v56jyr0REeqwCtv2Ps6WoA" image="_v56j5b0REeqwCtv2Ps6WoA"/>
+    <mappings xmi:id="_6b7J8r0REeqwCtv2Ps6WoA" origin="_6b7J8L0REeqwCtv2Ps6WoA" image="_6b7J8b0REeqwCtv2Ps6WoA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_pvQ9AMG_EeqSNe_V4G7dNw" name="Adaptation_1_3">
+    <lhs xmi:id="_pvQ9AsG_EeqSNe_V4G7dNw" name="Lhs">
+      <nodes xmi:id="_pvQ9A8G_EeqSNe_V4G7dNw" incoming="_pvQ9EcG_EeqSNe_V4G7dNw" outgoing="_pvQ9EsG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9BMG_EeqSNe_V4G7dNw" incoming="_pvQ9EMG_EeqSNe_V4G7dNw" outgoing="_pvQ9EcG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9BcG_EeqSNe_V4G7dNw" outgoing="_pvQ9D8G_EeqSNe_V4G7dNw _pvQ9EMG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_pvQ9BsG_EeqSNe_V4G7dNw" value="true">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_pvQ9B8G_EeqSNe_V4G7dNw" incoming="_pvQ9D8G_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//DataSubject"/>
+        <attributes xmi:id="_pvQ9CMG_EeqSNe_V4G7dNw" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//DataSpecificRole/location"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_pvQ9CcG_EeqSNe_V4G7dNw" incoming="_pvQ9EsG_EeqSNe_V4G7dNw _pvQ9FMG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9CsG_EeqSNe_V4G7dNw" incoming="_pvQ9FcG_EeqSNe_V4G7dNw" outgoing="_pvQ9E8G_EeqSNe_V4G7dNw _pvQ9FMG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9C8G_EeqSNe_V4G7dNw" incoming="_pvQ9E8G_EeqSNe_V4G7dNw" outgoing="_pvQ9FcG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Compute"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9DMG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Compute"/>
+        <attributes xmi:id="_pvQ9DcG_EeqSNe_V4G7dNw" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//Compute/jurisdiction"/>
+        </attributes>
+        <attributes xmi:id="_pvQ9DsG_EeqSNe_V4G7dNw" value="&quot;D :Compute&quot;">
+          <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_pvQ9D8G_EeqSNe_V4G7dNw" source="_pvQ9BcG_EeqSNe_V4G7dNw" target="_pvQ9B8G_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Record/belongsTo"/>
+      </edges>
+      <edges xmi:id="_pvQ9EMG_EeqSNe_V4G7dNw" source="_pvQ9BcG_EeqSNe_V4G7dNw" target="_pvQ9BMG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_pvQ9EcG_EeqSNe_V4G7dNw" source="_pvQ9BMG_EeqSNe_V4G7dNw" target="_pvQ9A8G_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_pvQ9EsG_EeqSNe_V4G7dNw" source="_pvQ9A8G_EeqSNe_V4G7dNw" target="_pvQ9CcG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_pvQ9E8G_EeqSNe_V4G7dNw" source="_pvQ9CsG_EeqSNe_V4G7dNw" target="_pvQ9C8G_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+      <edges xmi:id="_pvQ9FMG_EeqSNe_V4G7dNw" source="_pvQ9CsG_EeqSNe_V4G7dNw" target="_pvQ9CcG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//SoftwareComponent/accessDBMS"/>
+      </edges>
+      <edges xmi:id="_pvQ9FcG_EeqSNe_V4G7dNw" source="_pvQ9C8G_EeqSNe_V4G7dNw" target="_pvQ9CsG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_pvQ9FsG_EeqSNe_V4G7dNw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_pvQ9F8G_EeqSNe_V4G7dNw">
+          <conclusion xmi:id="_pvQ9GMG_EeqSNe_V4G7dNw">
+            <nodes xmi:id="_pvQ9GcG_EeqSNe_V4G7dNw">
+              <type href="www.CloudModel.com#//Compute"/>
+              <attributes xmi:id="_pvQ9GsG_EeqSNe_V4G7dNw" value="&quot;EU&quot;">
+                <type href="www.CloudModel.com#//Compute/jurisdiction"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_pvQ9G8G_EeqSNe_V4G7dNw">
+              <type href="www.CloudModel.com#//SoftwareComponent"/>
+            </nodes>
+            <nodes xmi:id="_pvQ9HMG_EeqSNe_V4G7dNw">
+              <type href="www.CloudModel.com#//DBMS"/>
+            </nodes>
+          </conclusion>
+          <mappings xmi:id="_pvQ9HcG_EeqSNe_V4G7dNw" origin="_pvQ9C8G_EeqSNe_V4G7dNw" image="_pvQ9GcG_EeqSNe_V4G7dNw"/>
+          <mappings xmi:id="_pvQ9HsG_EeqSNe_V4G7dNw" origin="_pvQ9CsG_EeqSNe_V4G7dNw" image="_pvQ9G8G_EeqSNe_V4G7dNw"/>
+          <mappings xmi:id="_pvQ9H8G_EeqSNe_V4G7dNw" origin="_pvQ9CcG_EeqSNe_V4G7dNw" image="_pvQ9HMG_EeqSNe_V4G7dNw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_pvQ9IMG_EeqSNe_V4G7dNw" name="Rhs">
+      <nodes xmi:id="_pvQ9IcG_EeqSNe_V4G7dNw" incoming="_pvQ9L8G_EeqSNe_V4G7dNw" outgoing="_pvQ9MMG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9IsG_EeqSNe_V4G7dNw" incoming="_pvQ9LsG_EeqSNe_V4G7dNw" outgoing="_pvQ9L8G_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9I8G_EeqSNe_V4G7dNw" outgoing="_pvQ9LcG_EeqSNe_V4G7dNw _pvQ9LsG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_pvQ9JMG_EeqSNe_V4G7dNw" value="true">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_pvQ9JcG_EeqSNe_V4G7dNw" incoming="_pvQ9LcG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//DataSubject"/>
+        <attributes xmi:id="_pvQ9JsG_EeqSNe_V4G7dNw" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//DataSpecificRole/location"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_pvQ9J8G_EeqSNe_V4G7dNw" incoming="_pvQ9MMG_EeqSNe_V4G7dNw _pvQ9McG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9KMG_EeqSNe_V4G7dNw" outgoing="_pvQ9McG_EeqSNe_V4G7dNw _pvQ9MsG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9KcG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Compute"/>
+      </nodes>
+      <nodes xmi:id="_pvQ9KsG_EeqSNe_V4G7dNw" incoming="_pvQ9MsG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Compute"/>
+        <attributes xmi:id="_pvQ9K8G_EeqSNe_V4G7dNw" value="&quot;EU&quot;">
+          <type href="www.CloudModel.com#//Compute/jurisdiction"/>
+        </attributes>
+        <attributes xmi:id="_pvQ9LMG_EeqSNe_V4G7dNw" value="&quot;D :Compute&quot;">
+          <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_pvQ9LcG_EeqSNe_V4G7dNw" source="_pvQ9I8G_EeqSNe_V4G7dNw" target="_pvQ9JcG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Record/belongsTo"/>
+      </edges>
+      <edges xmi:id="_pvQ9LsG_EeqSNe_V4G7dNw" source="_pvQ9I8G_EeqSNe_V4G7dNw" target="_pvQ9IsG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_pvQ9L8G_EeqSNe_V4G7dNw" source="_pvQ9IsG_EeqSNe_V4G7dNw" target="_pvQ9IcG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_pvQ9MMG_EeqSNe_V4G7dNw" source="_pvQ9IcG_EeqSNe_V4G7dNw" target="_pvQ9J8G_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_pvQ9McG_EeqSNe_V4G7dNw" source="_pvQ9KMG_EeqSNe_V4G7dNw" target="_pvQ9J8G_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//SoftwareComponent/accessDBMS"/>
+      </edges>
+      <edges xmi:id="_pvQ9MsG_EeqSNe_V4G7dNw" source="_pvQ9KMG_EeqSNe_V4G7dNw" target="_pvQ9KsG_EeqSNe_V4G7dNw">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_pvQ9NcG_EeqSNe_V4G7dNw" origin="_pvQ9A8G_EeqSNe_V4G7dNw" image="_pvQ9IcG_EeqSNe_V4G7dNw"/>
+    <mappings xmi:id="_pvQ9NsG_EeqSNe_V4G7dNw" origin="_pvQ9BMG_EeqSNe_V4G7dNw" image="_pvQ9IsG_EeqSNe_V4G7dNw"/>
+    <mappings xmi:id="_pvQ9N8G_EeqSNe_V4G7dNw" origin="_pvQ9BcG_EeqSNe_V4G7dNw" image="_pvQ9I8G_EeqSNe_V4G7dNw"/>
+    <mappings xmi:id="_pvQ9OMG_EeqSNe_V4G7dNw" origin="_pvQ9B8G_EeqSNe_V4G7dNw" image="_pvQ9JcG_EeqSNe_V4G7dNw"/>
+    <mappings xmi:id="_pvQ9OcG_EeqSNe_V4G7dNw" origin="_pvQ9CcG_EeqSNe_V4G7dNw" image="_pvQ9J8G_EeqSNe_V4G7dNw"/>
+    <mappings xmi:id="_pvQ9OsG_EeqSNe_V4G7dNw" origin="_pvQ9CsG_EeqSNe_V4G7dNw" image="_pvQ9KMG_EeqSNe_V4G7dNw"/>
+    <mappings xmi:id="_pvQ9O8G_EeqSNe_V4G7dNw" origin="_pvQ9C8G_EeqSNe_V4G7dNw" image="_pvQ9KcG_EeqSNe_V4G7dNw"/>
+    <mappings xmi:id="_pvQ9PMG_EeqSNe_V4G7dNw" origin="_pvQ9DMG_EeqSNe_V4G7dNw" image="_pvQ9KsG_EeqSNe_V4G7dNw"/>
+  </units>
+</henshin:Module>

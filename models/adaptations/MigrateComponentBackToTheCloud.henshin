@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_9O-gkL02Eeq2wZex8QiiyA">
+  <imports href="www.CloudModel.com#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_-pCDwL02Eeq2wZex8QiiyA" name="Adaptation_21_1">
+    <annotations xmi:id="_-pn5oL02Eeq2wZex8QiiyA" key="featureModel" value=""/>
+    <annotations xmi:id="_-pn5ob02Eeq2wZex8QiiyA" key="injectiveMatchingPresenceCondition" value=""/>
+    <annotations xmi:id="_-pn5or02Eeq2wZex8QiiyA" key="features" value=""/>
+    <lhs xmi:id="_-pL0wL02Eeq2wZex8QiiyA" name="Lhs">
+      <nodes xmi:id="_Cew_ML03Eeq2wZex8QiiyA" outgoing="_KX1NML03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_DHo9EL03Eeq2wZex8QiiyA" value="false">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_FRT_UL03Eeq2wZex8QiiyA" incoming="_KX1NML03Eeq2wZex8QiiyA" outgoing="_Ky9qAL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_GFKeIL03Eeq2wZex8QiiyA" incoming="_Ky9qAL03Eeq2wZex8QiiyA" outgoing="_LQU7cL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_GcKo4L03Eeq2wZex8QiiyA" outgoing="_LiYUwL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_G8OpAL03Eeq2wZex8QiiyA" incoming="_LQU7cL03Eeq2wZex8QiiyA" outgoing="_MthSML03Eeq2wZex8QiiyA _NDI84L03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_HZtPML03Eeq2wZex8QiiyA" incoming="_LiYUwL03Eeq2wZex8QiiyA" outgoing="_NU73gL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_H60_QL03Eeq2wZex8QiiyA" incoming="_MthSML03Eeq2wZex8QiiyA" outgoing="_NnUoAL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_Ihrj4L03Eeq2wZex8QiiyA" incoming="_NDI84L03Eeq2wZex8QiiyA _NnUoAL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//FogCompute"/>
+      </nodes>
+      <nodes xmi:id="_I-eNkL03Eeq2wZex8QiiyA" incoming="_NU73gL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//CloudCompute"/>
+      </nodes>
+      <edges xmi:id="_KX1NML03Eeq2wZex8QiiyA" source="_Cew_ML03Eeq2wZex8QiiyA" target="_FRT_UL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_Ky9qAL03Eeq2wZex8QiiyA" source="_FRT_UL03Eeq2wZex8QiiyA" target="_GFKeIL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_LQU7cL03Eeq2wZex8QiiyA" source="_GFKeIL03Eeq2wZex8QiiyA" target="_G8OpAL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_LiYUwL03Eeq2wZex8QiiyA" source="_GcKo4L03Eeq2wZex8QiiyA" target="_HZtPML03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_MthSML03Eeq2wZex8QiiyA" source="_G8OpAL03Eeq2wZex8QiiyA" target="_H60_QL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//DBMS/accessedBySoftwareComponent"/>
+      </edges>
+      <edges xmi:id="_NDI84L03Eeq2wZex8QiiyA" source="_G8OpAL03Eeq2wZex8QiiyA" target="_Ihrj4L03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+      <edges xmi:id="_NU73gL03Eeq2wZex8QiiyA" source="_HZtPML03Eeq2wZex8QiiyA" target="_I-eNkL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+      <edges xmi:id="_NnUoAL03Eeq2wZex8QiiyA" source="_H60_QL03Eeq2wZex8QiiyA" target="_Ihrj4L03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_-pL0wb02Eeq2wZex8QiiyA" name="Rhs">
+      <nodes xmi:id="_Cew_Mb03Eeq2wZex8QiiyA" outgoing="_KX1NMb03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_DHo9Eb03Eeq2wZex8QiiyA" value="false">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_FRT_Ub03Eeq2wZex8QiiyA" incoming="_KX1NMb03Eeq2wZex8QiiyA" outgoing="_K9MkEL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_GFKeIb03Eeq2wZex8QiiyA" outgoing="_LQU7cb03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_GcKo4b03Eeq2wZex8QiiyA" incoming="_K9MkEL03Eeq2wZex8QiiyA" outgoing="_LiYUwb03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_G8PQEL03Eeq2wZex8QiiyA" incoming="_LQU7cb03Eeq2wZex8QiiyA" outgoing="_NDI84b03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_HZtPMb03Eeq2wZex8QiiyA" incoming="_LiYUwb03Eeq2wZex8QiiyA" outgoing="_NU73gb03Eeq2wZex8QiiyA _MY_MoL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_H60_Qb03Eeq2wZex8QiiyA" incoming="_MY_MoL03Eeq2wZex8QiiyA" outgoing="_N5puIL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_Ihrj4b03Eeq2wZex8QiiyA" incoming="_NDI84b03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//FogCompute"/>
+      </nodes>
+      <nodes xmi:id="_I-eNkb03Eeq2wZex8QiiyA" incoming="_NU73gb03Eeq2wZex8QiiyA _N5puIL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//CloudCompute"/>
+      </nodes>
+      <edges xmi:id="_KX1NMb03Eeq2wZex8QiiyA" source="_Cew_Mb03Eeq2wZex8QiiyA" target="_FRT_Ub03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_LQU7cb03Eeq2wZex8QiiyA" source="_GFKeIb03Eeq2wZex8QiiyA" target="_G8PQEL03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_LiYUwb03Eeq2wZex8QiiyA" source="_GcKo4b03Eeq2wZex8QiiyA" target="_HZtPMb03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_NDI84b03Eeq2wZex8QiiyA" source="_G8PQEL03Eeq2wZex8QiiyA" target="_Ihrj4b03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+      <edges xmi:id="_NU73gb03Eeq2wZex8QiiyA" source="_HZtPMb03Eeq2wZex8QiiyA" target="_I-eNkb03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+      <edges xmi:id="_K9MkEL03Eeq2wZex8QiiyA" source="_FRT_Ub03Eeq2wZex8QiiyA" target="_GcKo4b03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_MY_MoL03Eeq2wZex8QiiyA" source="_HZtPMb03Eeq2wZex8QiiyA" target="_H60_Qb03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//DBMS/accessedBySoftwareComponent"/>
+      </edges>
+      <edges xmi:id="_N5puIL03Eeq2wZex8QiiyA" source="_H60_Qb03Eeq2wZex8QiiyA" target="_I-eNkb03Eeq2wZex8QiiyA">
+        <type href="www.CloudModel.com#//SoftwareComponent/hostedOn"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_Cew_Mr03Eeq2wZex8QiiyA" origin="_Cew_ML03Eeq2wZex8QiiyA" image="_Cew_Mb03Eeq2wZex8QiiyA"/>
+    <mappings xmi:id="_FRT_Ur03Eeq2wZex8QiiyA" origin="_FRT_UL03Eeq2wZex8QiiyA" image="_FRT_Ub03Eeq2wZex8QiiyA"/>
+    <mappings xmi:id="_GFKeIr03Eeq2wZex8QiiyA" origin="_GFKeIL03Eeq2wZex8QiiyA" image="_GFKeIb03Eeq2wZex8QiiyA"/>
+    <mappings xmi:id="_GcKo4r03Eeq2wZex8QiiyA" origin="_GcKo4L03Eeq2wZex8QiiyA" image="_GcKo4b03Eeq2wZex8QiiyA"/>
+    <mappings xmi:id="_G8PQEb03Eeq2wZex8QiiyA" origin="_G8OpAL03Eeq2wZex8QiiyA" image="_G8PQEL03Eeq2wZex8QiiyA"/>
+    <mappings xmi:id="_HZtPMr03Eeq2wZex8QiiyA" origin="_HZtPML03Eeq2wZex8QiiyA" image="_HZtPMb03Eeq2wZex8QiiyA"/>
+    <mappings xmi:id="_H60_Qr03Eeq2wZex8QiiyA" origin="_H60_QL03Eeq2wZex8QiiyA" image="_H60_Qb03Eeq2wZex8QiiyA"/>
+    <mappings xmi:id="_Ihrj4r03Eeq2wZex8QiiyA" origin="_Ihrj4L03Eeq2wZex8QiiyA" image="_Ihrj4b03Eeq2wZex8QiiyA"/>
+    <mappings xmi:id="_I-eNkr03Eeq2wZex8QiiyA" origin="_I-eNkL03Eeq2wZex8QiiyA" image="_I-eNkb03Eeq2wZex8QiiyA"/>
+  </units>
+</henshin:Module>

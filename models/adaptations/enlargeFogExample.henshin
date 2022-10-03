@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_OXkzIMG_EeqtPKFrQtm_Ug">
+  <imports href="www.CloudModel.com#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_heahIMG_EeqtPKFrQtm_Ug" name="enlargeFogExample">
+    <lhs xmi:id="_hfT5AMG_EeqtPKFrQtm_Ug" name="Lhs">
+      <nodes xmi:id="_u8t5UMG_EeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//FogCompute"/>
+      </nodes>
+      <nodes xmi:id="_wC2a8MG_EeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudCompute"/>
+      </nodes>
+      <nodes xmi:id="_6pELsMG_EeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_hfT5AcG_EeqtPKFrQtm_Ug" name="Rhs">
+      <nodes xmi:id="_u8t5UcG_EeqtPKFrQtm_Ug" outgoing="_nxJ1EMHAEeqtPKFrQtm_Ug _oIhMMMHAEeqtPKFrQtm_Ug _o3PTYMHAEeqtPKFrQtm_Ug _pSE1QMHAEeqtPKFrQtm_Ug _qVk5oMHAEeqtPKFrQtm_Ug _rP6a8MHAEeqtPKFrQtm_Ug _rf1tUMHAEeqtPKFrQtm_Ug _smGx0MHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//FogCompute"/>
+      </nodes>
+      <nodes xmi:id="_wC2a8cG_EeqtPKFrQtm_Ug" outgoing="_BTM5sMHGEeqtPKFrQtm_Ug _BfoMIMHGEeqtPKFrQtm_Ug _CnlSsMHGEeqtPKFrQtm_Ug _CzvfYMHGEeqtPKFrQtm_Ug _DC1rUMHGEeqtPKFrQtm_Ug _DcrusMHGEeqtPKFrQtm_Ug _DvLM4MHGEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudCompute"/>
+      </nodes>
+      <nodes xmi:id="_6pELscG_EeqtPKFrQtm_Ug" outgoing="_VeaWIMHDEeqtPKFrQtm_Ug _1RjQQMHGEeqtPKFrQtm_Ug _5tLuEMHGEeqtPKFrQtm_Ug _6u_JUMHGEeqtPKFrQtm_Ug _7gL8wMHGEeqtPKFrQtm_Ug _8WtVEMHGEeqtPKFrQtm_Ug _9Ce18MHGEeqtPKFrQtm_Ug _-pQmgMHGEeqtPKFrQtm_Ug __osDMMHGEeqtPKFrQtm_Ug _AKE5AMHHEeqtPKFrQtm_Ug _Apex0MHHEeqtPKFrQtm_Ug _C1nSMMHHEeqtPKFrQtm_Ug _EQ8AsMHHEeqtPKFrQtm_Ug _FL50IMHHEeqtPKFrQtm_Ug _G705oMHHEeqtPKFrQtm_Ug _HrGacMHHEeqtPKFrQtm_Ug _IeiCgMHHEeqtPKFrQtm_Ug _LCInsMHHEeqtPKFrQtm_Ug _MraSoMHHEeqtPKFrQtm_Ug _NN1DMMHHEeqtPKFrQtm_Ug _OHYhYMHHEeqtPKFrQtm_Ug _OqWrkMHHEeqtPKFrQtm_Ug _QFzV4MHHEeqtPKFrQtm_Ug _QrrDEMHHEeqtPKFrQtm_Ug _Snz_oMHHEeqtPKFrQtm_Ug _TIH3YMHHEeqtPKFrQtm_Ug _Ty7H4MHHEeqtPKFrQtm_Ug _Vc26IMHHEeqtPKFrQtm_Ug _WDI3AMHHEeqtPKFrQtm_Ug _XqZIsMHHEeqtPKFrQtm_Ug _YMnsAMHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment"/>
+      </nodes>
+      <nodes xmi:id="__eV4kMG_EeqtPKFrQtm_Ug" incoming="_nxJ1EMHAEeqtPKFrQtm_Ug _YMnsAMHHEeqtPKFrQtm_Ug" outgoing="_Rd1ukMHBEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_FKEsUMHAEeqtPKFrQtm_Ug" incoming="_Rd1ukMHBEeqtPKFrQtm_Ug _Tn8OoMHBEeqtPKFrQtm_Ug _XqZIsMHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_GX7mkMHAEeqtPKFrQtm_Ug" incoming="_oIhMMMHAEeqtPKFrQtm_Ug _WDI3AMHHEeqtPKFrQtm_Ug" outgoing="_Tn8OoMHBEeqtPKFrQtm_Ug _VynWcMHBEeqtPKFrQtm_Ug _Woo_gMHBEeqtPKFrQtm_Ug _XhZzgMHBEeqtPKFrQtm_Ug _zKLJgMHFEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_HNi_8MHAEeqtPKFrQtm_Ug" incoming="_VynWcMHBEeqtPKFrQtm_Ug _V_YnIMHBEeqtPKFrQtm_Ug _Vc26IMHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_HwsJQMHAEeqtPKFrQtm_Ug" incoming="_Woo_gMHBEeqtPKFrQtm_Ug _Ww2gUMHBEeqtPKFrQtm_Ug _Ty7H4MHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_IVEBoMHAEeqtPKFrQtm_Ug" incoming="_o3PTYMHAEeqtPKFrQtm_Ug _TIH3YMHHEeqtPKFrQtm_Ug" outgoing="_Ww2gUMHBEeqtPKFrQtm_Ug _W7o0AMHBEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_IzuTkMHAEeqtPKFrQtm_Ug" incoming="_W7o0AMHBEeqtPKFrQtm_Ug _XF0qwMHBEeqtPKFrQtm_Ug _Snz_oMHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_JP0ZsMHAEeqtPKFrQtm_Ug" incoming="_qVk5oMHAEeqtPKFrQtm_Ug _x9tWYMHFEeqtPKFrQtm_Ug _OqWrkMHHEeqtPKFrQtm_Ug" outgoing="_V_YnIMHBEeqtPKFrQtm_Ug _XF0qwMHBEeqtPKFrQtm_Ug _X7si0MHBEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_Lp_9IMHAEeqtPKFrQtm_Ug" incoming="_rP6a8MHAEeqtPKFrQtm_Ug _QrrDEMHHEeqtPKFrQtm_Ug" outgoing="_YJlN0MHBEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_MHhmoMHAEeqtPKFrQtm_Ug" incoming="_YJlN0MHBEeqtPKFrQtm_Ug _YQwM0MHBEeqtPKFrQtm_Ug _QFzV4MHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_M7faMMHAEeqtPKFrQtm_Ug" incoming="_rf1tUMHAEeqtPKFrQtm_Ug _LCInsMHHEeqtPKFrQtm_Ug" outgoing="_YQwM0MHBEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_Py7hYMHAEeqtPKFrQtm_Ug" incoming="_XhZzgMHBEeqtPKFrQtm_Ug _XqYwYMHBEeqtPKFrQtm_Ug _OHYhYMHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_Qe5PgMHAEeqtPKFrQtm_Ug" incoming="_pSE1QMHAEeqtPKFrQtm_Ug _NN1DMMHHEeqtPKFrQtm_Ug" outgoing="_XqYwYMHBEeqtPKFrQtm_Ug _X0uYIMHBEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_Q2iTcMHAEeqtPKFrQtm_Ug" incoming="_X0uYIMHBEeqtPKFrQtm_Ug _X7si0MHBEeqtPKFrQtm_Ug _MraSoMHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_WqX6UMHAEeqtPKFrQtm_Ug" incoming="_smGx0MHAEeqtPKFrQtm_Ug _5tLuEMHGEeqtPKFrQtm_Ug" outgoing="_AEk8sMHBEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_XEWgkMHAEeqtPKFrQtm_Ug" incoming="_AEk8sMHBEeqtPKFrQtm_Ug _VeaWIMHDEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_JPYp8MHCEeqtPKFrQtm_Ug" incoming="_BTM5sMHGEeqtPKFrQtm_Ug _G705oMHHEeqtPKFrQtm_Ug" outgoing="_ZHAGEMHGEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_Jx7WUMHCEeqtPKFrQtm_Ug" incoming="_ZHAGEMHGEeqtPKFrQtm_Ug _ZRsTIMHGEeqtPKFrQtm_Ug _HrGacMHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_KUfQ0MHCEeqtPKFrQtm_Ug" incoming="_BfoMIMHGEeqtPKFrQtm_Ug _IeiCgMHHEeqtPKFrQtm_Ug" outgoing="_ZRsTIMHGEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_K9pikMHCEeqtPKFrQtm_Ug" incoming="_CzvfYMHGEeqtPKFrQtm_Ug _EQ8AsMHHEeqtPKFrQtm_Ug" outgoing="_Zz8EkMHGEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_Lc2AAMHCEeqtPKFrQtm_Ug" incoming="_Zz8EkMHGEeqtPKFrQtm_Ug _aFEQ0MHGEeqtPKFrQtm_Ug _FL50IMHHEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_L2NiQMHCEeqtPKFrQtm_Ug" incoming="_4iuikMHFEeqtPKFrQtm_Ug _CnlSsMHGEeqtPKFrQtm_Ug _AKE5AMHHEeqtPKFrQtm_Ug" outgoing="_TZtBgMHFEeqtPKFrQtm_Ug _iqSPoMHFEeqtPKFrQtm_Ug _aFEQ0MHGEeqtPKFrQtm_Ug _aS5RcMHGEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_MVv98MHCEeqtPKFrQtm_Ug" incoming="_aS5RcMHGEeqtPKFrQtm_Ug _ai4OMMHGEeqtPKFrQtm_Ug __osDMMHGEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_MwR90MHCEeqtPKFrQtm_Ug" incoming="_DC1rUMHGEeqtPKFrQtm_Ug _C1nSMMHHEeqtPKFrQtm_Ug" outgoing="_ai4OMMHGEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_O47sYMHCEeqtPKFrQtm_Ug" incoming="_DvLM4MHGEeqtPKFrQtm_Ug _9Ce18MHGEeqtPKFrQtm_Ug" outgoing="_vDg2IMHFEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent"/>
+      </nodes>
+      <nodes xmi:id="_PWytEMHCEeqtPKFrQtm_Ug" incoming="_LCZYUMHFEeqtPKFrQtm_Ug _TZtBgMHFEeqtPKFrQtm_Ug _DcrusMHGEeqtPKFrQtm_Ug _8WtVEMHGEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DBMS"/>
+      </nodes>
+      <nodes xmi:id="_PznL8MHCEeqtPKFrQtm_Ug" incoming="_K4J3MMHFEeqtPKFrQtm_Ug _7gL8wMHGEeqtPKFrQtm_Ug" outgoing="_LCZYUMHFEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Database"/>
+      </nodes>
+      <nodes xmi:id="_Qjhl8MHCEeqtPKFrQtm_Ug" incoming="_KcB74MHFEeqtPKFrQtm_Ug _iqSPoMHFEeqtPKFrQtm_Ug _6u_JUMHGEeqtPKFrQtm_Ug" outgoing="_K4J3MMHFEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//StoredDataSet"/>
+      </nodes>
+      <nodes xmi:id="_RAICYMHCEeqtPKFrQtm_Ug" incoming="_1RjQQMHGEeqtPKFrQtm_Ug" outgoing="_KcB74MHFEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Record"/>
+        <attributes xmi:id="_sjRRgMHGEeqtPKFrQtm_Ug" value="true">
+          <type href="www.CloudModel.com#//Record/sensitive"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_SgiFMMHCEeqtPKFrQtm_Ug" incoming="_vDg2IMHFEeqtPKFrQtm_Ug _-pQmgMHGEeqtPKFrQtm_Ug" outgoing="_x9tWYMHFEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <nodes xmi:id="_S6_MkMHCEeqtPKFrQtm_Ug" incoming="_zKLJgMHFEeqtPKFrQtm_Ug _Apex0MHHEeqtPKFrQtm_Ug" outgoing="_4iuikMHFEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow"/>
+      </nodes>
+      <edges xmi:id="_nxJ1EMHAEeqtPKFrQtm_Ug" source="_u8t5UcG_EeqtPKFrQtm_Ug" target="__eV4kMG_EeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_oIhMMMHAEeqtPKFrQtm_Ug" source="_u8t5UcG_EeqtPKFrQtm_Ug" target="_GX7mkMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_o3PTYMHAEeqtPKFrQtm_Ug" source="_u8t5UcG_EeqtPKFrQtm_Ug" target="_IVEBoMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_pSE1QMHAEeqtPKFrQtm_Ug" source="_u8t5UcG_EeqtPKFrQtm_Ug" target="_Qe5PgMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_qVk5oMHAEeqtPKFrQtm_Ug" source="_u8t5UcG_EeqtPKFrQtm_Ug" target="_JP0ZsMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_rP6a8MHAEeqtPKFrQtm_Ug" source="_u8t5UcG_EeqtPKFrQtm_Ug" target="_Lp_9IMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_rf1tUMHAEeqtPKFrQtm_Ug" source="_u8t5UcG_EeqtPKFrQtm_Ug" target="_M7faMMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_smGx0MHAEeqtPKFrQtm_Ug" source="_u8t5UcG_EeqtPKFrQtm_Ug" target="_WqX6UMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_AEk8sMHBEeqtPKFrQtm_Ug" source="_WqX6UMHAEeqtPKFrQtm_Ug" target="_XEWgkMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DBMS/hosts"/>
+      </edges>
+      <edges xmi:id="_Rd1ukMHBEeqtPKFrQtm_Ug" source="__eV4kMG_EeqtPKFrQtm_Ug" target="_FKEsUMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_Tn8OoMHBEeqtPKFrQtm_Ug" source="_GX7mkMHAEeqtPKFrQtm_Ug" target="_FKEsUMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_VynWcMHBEeqtPKFrQtm_Ug" source="_GX7mkMHAEeqtPKFrQtm_Ug" target="_HNi_8MHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_V_YnIMHBEeqtPKFrQtm_Ug" source="_JP0ZsMHAEeqtPKFrQtm_Ug" target="_HNi_8MHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_Woo_gMHBEeqtPKFrQtm_Ug" source="_GX7mkMHAEeqtPKFrQtm_Ug" target="_HwsJQMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_Ww2gUMHBEeqtPKFrQtm_Ug" source="_IVEBoMHAEeqtPKFrQtm_Ug" target="_HwsJQMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_W7o0AMHBEeqtPKFrQtm_Ug" source="_IVEBoMHAEeqtPKFrQtm_Ug" target="_IzuTkMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_XF0qwMHBEeqtPKFrQtm_Ug" source="_JP0ZsMHAEeqtPKFrQtm_Ug" target="_IzuTkMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_XhZzgMHBEeqtPKFrQtm_Ug" source="_GX7mkMHAEeqtPKFrQtm_Ug" target="_Py7hYMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_XqYwYMHBEeqtPKFrQtm_Ug" source="_Qe5PgMHAEeqtPKFrQtm_Ug" target="_Py7hYMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_X0uYIMHBEeqtPKFrQtm_Ug" source="_Qe5PgMHAEeqtPKFrQtm_Ug" target="_Q2iTcMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_X7si0MHBEeqtPKFrQtm_Ug" source="_JP0ZsMHAEeqtPKFrQtm_Ug" target="_Q2iTcMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_YJlN0MHBEeqtPKFrQtm_Ug" source="_Lp_9IMHAEeqtPKFrQtm_Ug" target="_MHhmoMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_YQwM0MHBEeqtPKFrQtm_Ug" source="_M7faMMHAEeqtPKFrQtm_Ug" target="_MHhmoMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_VeaWIMHDEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_XEWgkMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_KcB74MHFEeqtPKFrQtm_Ug" source="_RAICYMHCEeqtPKFrQtm_Ug" target="_Qjhl8MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Record/partOf"/>
+      </edges>
+      <edges xmi:id="_K4J3MMHFEeqtPKFrQtm_Ug" source="_Qjhl8MHCEeqtPKFrQtm_Ug" target="_PznL8MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//StoredDataSet/storedIn"/>
+      </edges>
+      <edges xmi:id="_LCZYUMHFEeqtPKFrQtm_Ug" source="_PznL8MHCEeqtPKFrQtm_Ug" target="_PWytEMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Database/hostedOn"/>
+      </edges>
+      <edges xmi:id="_TZtBgMHFEeqtPKFrQtm_Ug" source="_L2NiQMHCEeqtPKFrQtm_Ug" target="_PWytEMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/accessDBMS"/>
+      </edges>
+      <edges xmi:id="_iqSPoMHFEeqtPKFrQtm_Ug" source="_L2NiQMHCEeqtPKFrQtm_Ug" target="_Qjhl8MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/creates"/>
+      </edges>
+      <edges xmi:id="_vDg2IMHFEeqtPKFrQtm_Ug" source="_O47sYMHCEeqtPKFrQtm_Ug" target="_SgiFMMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_x9tWYMHFEeqtPKFrQtm_Ug" source="_SgiFMMHCEeqtPKFrQtm_Ug" target="_JP0ZsMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow/transfersTo"/>
+      </edges>
+      <edges xmi:id="_zKLJgMHFEeqtPKFrQtm_Ug" source="_GX7mkMHAEeqtPKFrQtm_Ug" target="_S6_MkMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_4iuikMHFEeqtPKFrQtm_Ug" source="_S6_MkMHCEeqtPKFrQtm_Ug" target="_L2NiQMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//DataFlow/transfersTo"/>
+      </edges>
+      <edges xmi:id="_BTM5sMHGEeqtPKFrQtm_Ug" source="_wC2a8cG_EeqtPKFrQtm_Ug" target="_JPYp8MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_BfoMIMHGEeqtPKFrQtm_Ug" source="_wC2a8cG_EeqtPKFrQtm_Ug" target="_KUfQ0MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_CnlSsMHGEeqtPKFrQtm_Ug" source="_wC2a8cG_EeqtPKFrQtm_Ug" target="_L2NiQMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_CzvfYMHGEeqtPKFrQtm_Ug" source="_wC2a8cG_EeqtPKFrQtm_Ug" target="_K9pikMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_DC1rUMHGEeqtPKFrQtm_Ug" source="_wC2a8cG_EeqtPKFrQtm_Ug" target="_MwR90MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_DcrusMHGEeqtPKFrQtm_Ug" source="_wC2a8cG_EeqtPKFrQtm_Ug" target="_PWytEMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_DvLM4MHGEeqtPKFrQtm_Ug" source="_wC2a8cG_EeqtPKFrQtm_Ug" target="_O47sYMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//Compute/hosts"/>
+      </edges>
+      <edges xmi:id="_ZHAGEMHGEeqtPKFrQtm_Ug" source="_JPYp8MHCEeqtPKFrQtm_Ug" target="_Jx7WUMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_ZRsTIMHGEeqtPKFrQtm_Ug" source="_KUfQ0MHCEeqtPKFrQtm_Ug" target="_Jx7WUMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_Zz8EkMHGEeqtPKFrQtm_Ug" source="_K9pikMHCEeqtPKFrQtm_Ug" target="_Lc2AAMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_aFEQ0MHGEeqtPKFrQtm_Ug" source="_L2NiQMHCEeqtPKFrQtm_Ug" target="_Lc2AAMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_aS5RcMHGEeqtPKFrQtm_Ug" source="_L2NiQMHCEeqtPKFrQtm_Ug" target="_MVv98MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_ai4OMMHGEeqtPKFrQtm_Ug" source="_MwR90MHCEeqtPKFrQtm_Ug" target="_MVv98MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//SoftwareComponent/transferBy"/>
+      </edges>
+      <edges xmi:id="_1RjQQMHGEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_RAICYMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_5tLuEMHGEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_WqX6UMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_6u_JUMHGEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_Qjhl8MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_7gL8wMHGEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_PznL8MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_8WtVEMHGEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_PWytEMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_9Ce18MHGEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_O47sYMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_-pQmgMHGEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_SgiFMMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="__osDMMHGEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_MVv98MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_AKE5AMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_L2NiQMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_Apex0MHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_S6_MkMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_C1nSMMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_MwR90MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_EQ8AsMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_K9pikMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_FL50IMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_Lc2AAMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_G705oMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_JPYp8MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_HrGacMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_Jx7WUMHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_IeiCgMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_KUfQ0MHCEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_LCInsMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_M7faMMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_MraSoMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_Q2iTcMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_NN1DMMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_Qe5PgMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_OHYhYMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_Py7hYMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_OqWrkMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_JP0ZsMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_QFzV4MHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_MHhmoMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_QrrDEMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_Lp_9IMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_Snz_oMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_IzuTkMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_TIH3YMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_IVEBoMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_Ty7H4MHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_HwsJQMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_Vc26IMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_HNi_8MHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_WDI3AMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_GX7mkMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_XqZIsMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="_FKEsUMHAEeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+      <edges xmi:id="_YMnsAMHHEeqtPKFrQtm_Ug" source="_6pELscG_EeqtPKFrQtm_Ug" target="__eV4kMG_EeqtPKFrQtm_Ug">
+        <type href="www.CloudModel.com#//CloudEnvironment/tosca_nodes_root"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_u8ugYMG_EeqtPKFrQtm_Ug" origin="_u8t5UMG_EeqtPKFrQtm_Ug" image="_u8t5UcG_EeqtPKFrQtm_Ug"/>
+    <mappings xmi:id="_wC2a8sG_EeqtPKFrQtm_Ug" origin="_wC2a8MG_EeqtPKFrQtm_Ug" image="_wC2a8cG_EeqtPKFrQtm_Ug"/>
+    <mappings xmi:id="_6pELssG_EeqtPKFrQtm_Ug" origin="_6pELsMG_EeqtPKFrQtm_Ug" image="_6pELscG_EeqtPKFrQtm_Ug"/>
+  </units>
+</henshin:Module>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_27ktcLViEeq5qaxv773drw">
+  <imports href="www.CloudModel.com#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_51gvALViEeq5qaxv773drw" name="Adaptation_10_1">
+    <lhs xmi:id="_51jyULViEeq5qaxv773drw" name="Lhs">
+      <nodes xmi:id="_BQ0qALVjEeq5qaxv773drw">
+        <type href="www.CloudModel.com#//CloudCompute"/>
+        <attributes xmi:id="_KbozwLVjEeq5qaxv773drw" value="&quot;Cloud&quot;">
+          <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_C6evcLVjEeq5qaxv773drw">
+        <type href="www.CloudModel.com#//FogCompute"/>
+        <attributes xmi:id="_LpbckLVjEeq5qaxv773drw" value="&quot;FiaB&quot;">
+          <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+        </attributes>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_51jyUbViEeq5qaxv773drw" name="Rhs">
+      <nodes xmi:id="_BQ0qAbVjEeq5qaxv773drw">
+        <type href="www.CloudModel.com#//CloudCompute"/>
+        <attributes xmi:id="_KbozwbVjEeq5qaxv773drw" value="&quot;Cloud&quot;">
+          <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_C6evcbVjEeq5qaxv773drw">
+        <type href="www.CloudModel.com#//FogCompute"/>
+        <attributes xmi:id="_LpbckbVjEeq5qaxv773drw" value="&quot;FiaB&quot;">
+          <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+        </attributes>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_BQ0qArVjEeq5qaxv773drw" origin="_BQ0qALVjEeq5qaxv773drw" image="_BQ0qAbVjEeq5qaxv773drw"/>
+    <mappings xmi:id="_C6evcrVjEeq5qaxv773drw" origin="_C6evcLVjEeq5qaxv773drw" image="_C6evcbVjEeq5qaxv773drw"/>
+    <multiRules xmi:id="_Xx500LVkEeq5qaxv773drw">
+      <lhs xmi:id="_Xx7C8LVkEeq5qaxv773drw" name="Lhs">
+        <nodes xmi:id="_-YyF4LViEeq5qaxv773drw" incoming="_1gClwLVxEeqQHbHu15HE-w">
+          <type href="www.CloudModel.com#//SoftwareComponent"/>
+          <attributes xmi:id="__BmZYLViEeq5qaxv773drw" value="true">
+            <type href="www.CloudModel.com#//SoftwareComponent/hasToBeDeployedOnFogNode"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_Xx8RE7VkEeq5qaxv773drw" outgoing="_1gClwLVxEeqQHbHu15HE-w">
+          <type href="www.CloudModel.com#//CloudCompute"/>
+          <attributes xmi:id="_Xx8RFLVkEeq5qaxv773drw" value="&quot;Cloud&quot;">
+            <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_Xx8RHLVkEeq5qaxv773drw">
+          <type href="www.CloudModel.com#//FogCompute"/>
+          <attributes xmi:id="_Xx8RHbVkEeq5qaxv773drw" value="&quot;FiaB&quot;">
+            <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+          </attributes>
+        </nodes>
+        <edges xmi:id="_1gClwLVxEeqQHbHu15HE-w" source="_Xx8RE7VkEeq5qaxv773drw" target="_-YyF4LViEeq5qaxv773drw">
+          <type href="www.CloudModel.com#//Compute/hosts"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_Xx7qALVkEeq5qaxv773drw" name="Rhs">
+        <nodes xmi:id="_-Yys8LViEeq5qaxv773drw" incoming="_1VXm0LVxEeqQHbHu15HE-w">
+          <type href="www.CloudModel.com#//SoftwareComponent"/>
+          <attributes xmi:id="__BmZYbViEeq5qaxv773drw" value="true">
+            <type href="www.CloudModel.com#//SoftwareComponent/hasToBeDeployedOnFogNode"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_Xx7qBLVkEeq5qaxv773drw" outgoing="_1VXm0LVxEeqQHbHu15HE-w">
+          <type href="www.CloudModel.com#//FogCompute"/>
+          <attributes xmi:id="_Xx7qBbVkEeq5qaxv773drw" value="&quot;FiaB&quot;">
+            <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+          </attributes>
+        </nodes>
+        <nodes xmi:id="_Xx8RGLVkEeq5qaxv773drw">
+          <type href="www.CloudModel.com#//CloudCompute"/>
+          <attributes xmi:id="_Xx8RGbVkEeq5qaxv773drw" value="&quot;Cloud&quot;">
+            <type href="www.CloudModel.com#//tosca_nodes_Root/name"/>
+          </attributes>
+        </nodes>
+        <edges xmi:id="_1VXm0LVxEeqQHbHu15HE-w" source="_Xx7qBLVkEeq5qaxv773drw" target="_-Yys8LViEeq5qaxv773drw">
+          <type href="www.CloudModel.com#//Compute/hosts"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_Xx8RG7VkEeq5qaxv773drw" origin="_Xx8RE7VkEeq5qaxv773drw" image="_Xx8RGLVkEeq5qaxv773drw"/>
+      <mappings xmi:id="_Xx8RH7VkEeq5qaxv773drw" origin="_Xx8RHLVkEeq5qaxv773drw" image="_Xx7qBLVkEeq5qaxv773drw"/>
+      <mappings xmi:id="_-Yys8bViEeq5qaxv773drw" origin="_-YyF4LViEeq5qaxv773drw" image="_-Yys8LViEeq5qaxv773drw"/>
+      <multiMappings xmi:id="_Xx7qBrVkEeq5qaxv773drw" origin="_C6evcbVjEeq5qaxv773drw" image="_Xx7qBLVkEeq5qaxv773drw"/>
+      <multiMappings xmi:id="_Xx8RFbVkEeq5qaxv773drw" origin="_BQ0qALVjEeq5qaxv773drw" image="_Xx8RE7VkEeq5qaxv773drw"/>
+      <multiMappings xmi:id="_Xx8RGrVkEeq5qaxv773drw" origin="_BQ0qAbVjEeq5qaxv773drw" image="_Xx8RGLVkEeq5qaxv773drw"/>
+      <multiMappings xmi:id="_Xx8RHrVkEeq5qaxv773drw" origin="_C6evcLVjEeq5qaxv773drw" image="_Xx8RHLVkEeq5qaxv773drw"/>
+    </multiRules>
+  </units>
+</henshin:Module>

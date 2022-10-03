@@ -1,0 +1,12 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Nov 08 23:14:55 CET 2020
+http\://jarsm2.dyndns.dk/.error=Could not transfer artifact com.test\:emf-compare\:jar\:sources\:1.0 from/to my-repo3 (http\://jarsm2.dyndns.dk)\: jarsm2.dyndns.dk
+https\://repo.maven.apache.org/maven2/.lastUpdated=1604873695185
+file\:D\:\\Eclipse\ Workspace\ Radar\\RestAssured.RiskPattern.MatchFinder/libs/.error=
+http\://clojars.org/repo/.lastUpdated=1604873694265
+@default-my-repo3-http\://jarsm2.dyndns.dk/.lastUpdated=1604873694831
+http\://clojars.org/repo/.error=
+http\://dist.wso2.org/maven2/.lastUpdated=1604873694757
+file\:D\:\\Eclipse\ Workspace\ Radar\\RestAssured.RiskPattern.MatchFinder/libs/.lastUpdated=1604873694864
+https\://repo.maven.apache.org/maven2/.error=
+http\://dist.wso2.org/maven2/.error=

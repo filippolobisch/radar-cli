@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>henshin</groupId>
+  <artifactId>org.eclipse.emf.henshin.model</artifactId>
+  <versioning>
+    <release>1.4.0.201611301251</release>
+    <versions>
+      <version>1.4.0.201611301251</version>
+    </versions>
+    <lastUpdated>20190312111605</lastUpdated>
+  </versioning>
+</metadata>

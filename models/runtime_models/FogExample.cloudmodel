@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<CloudModel:CloudEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CloudModel="www.CloudModel.com">
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Shop floor management" hostedOn="//@tosca_nodes_root.14" neededCapacity="1" hasToBeDeployedOnFogNode="true" transferBy="//@tosca_nodes_root.15"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="FiaB remote management" hostedOn="//@tosca_nodes_root.14" neededCapacity="1" transferBy="//@tosca_nodes_root.15"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Robot control" hostedOn="//@tosca_nodes_root.14" neededCapacity="1" hasToBeDeployedOnFogNode="true" transferBy="//@tosca_nodes_root.16 //@tosca_nodes_root.18"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Tool management" hostedOn="//@tosca_nodes_root.14" neededCapacity="1" hasToBeDeployedOnFogNode="true" transferBy="//@tosca_nodes_root.16 //@tosca_nodes_root.17 //@tosca_nodes_root.19 //@tosca_nodes_root.22"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="AM task manager" hostedOn="//@tosca_nodes_root.14" neededCapacity="1" transferBy="//@tosca_nodes_root.19 //@tosca_nodes_root.20"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Process management" hostedOn="//@tosca_nodes_root.14" neededCapacity="1" hasToBeDeployedOnFogNode="true" transferBy="//@tosca_nodes_root.17 //@tosca_nodes_root.18 //@tosca_nodes_root.20 //@tosca_nodes_root.21 //@tosca_nodes_root.23"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Manual assembly SW" hostedOn="//@tosca_nodes_root.14" neededCapacity="2" transferBy="//@tosca_nodes_root.21"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="iWh manager" hostedOn="//@tosca_nodes_root.13" neededCapacity="1" transferBy="//@tosca_nodes_root.22"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Supply management" hostedOn="//@tosca_nodes_root.13" neededCapacity="2" transferBy="//@tosca_nodes_root.24"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Order management" hostedOn="//@tosca_nodes_root.13" accessDBMS="//@tosca_nodes_root.31" creates="//@tosca_nodes_root.27" neededCapacity="2" transferBy="//@tosca_nodes_root.23 //@tosca_nodes_root.24 //@tosca_nodes_root.25"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="ERP system" hostedOn="//@tosca_nodes_root.13" neededCapacity="2" transferBy="//@tosca_nodes_root.25"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Sensor evaluation SW" hostedOn="//@tosca_nodes_root.13" neededCapacity="1" transferBy="//@tosca_nodes_root.26"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="Sensor dashboard" hostedOn="//@tosca_nodes_root.13" neededCapacity="1" transferBy="//@tosca_nodes_root.26"/>
+  <tosca_nodes_root xsi:type="CloudModel:CloudCompute" name="Cloud" hosts="//@tosca_nodes_root.7 //@tosca_nodes_root.8 //@tosca_nodes_root.9 //@tosca_nodes_root.10 //@tosca_nodes_root.11 //@tosca_nodes_root.12 //@tosca_nodes_root.31" jurisdiction="EU" usageCostPerDay="0.552" capacity="100" transferCostPerGB="0.009"/>
+  <tosca_nodes_root xsi:type="CloudModel:FogCompute" name="FiaB" hosts="//@tosca_nodes_root.2 //@tosca_nodes_root.0 //@tosca_nodes_root.1 //@tosca_nodes_root.3 //@tosca_nodes_root.6 //@tosca_nodes_root.5 //@tosca_nodes_root.4 //@tosca_nodes_root.32" jurisdiction="EU" capacity="12"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="ShoopFloorManagementToFiaBRemoteManagement" amountOfDataInGB="5.0" transfersTo="//@tosca_nodes_root.0 //@tosca_nodes_root.1"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="RobotControlToToolManagement" amountOfDataInGB="2.0" transfersTo="//@tosca_nodes_root.2 //@tosca_nodes_root.3"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="ProcessManagementToToolManagement" amountOfDataInGB="1.0" transfersTo="//@tosca_nodes_root.3 //@tosca_nodes_root.5"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="RobotControlToProcessManagement" amountOfDataInGB="0.1" transfersTo="//@tosca_nodes_root.2 //@tosca_nodes_root.5"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="ToolManagementToAMTaskManager" amountOfDataInGB="2.0" transfersTo="//@tosca_nodes_root.3 //@tosca_nodes_root.4"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="ProcessManagementToAMTaskManager" amountOfDataInGB="0.1" transfersTo="//@tosca_nodes_root.4 //@tosca_nodes_root.5"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="ManuelAssemblySWToProcessManagement" amountOfDataInGB="1.0" transfersTo="//@tosca_nodes_root.6 //@tosca_nodes_root.5"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="ToolManagementToIWhManager" amountOfDataInGB="0.5" transfersTo="//@tosca_nodes_root.7 //@tosca_nodes_root.3"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="ProcessManagementToOrderManagement" amountOfDataInGB="0.1" transfersTo="//@tosca_nodes_root.5 //@tosca_nodes_root.9"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="OrderManagementToSupplyManagement" amountOfDataInGB="0.1" transfersTo="//@tosca_nodes_root.8 //@tosca_nodes_root.9"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="OrderManagementToERPSystem" amountOfDataInGB="1.0" transfersTo="//@tosca_nodes_root.9 //@tosca_nodes_root.10"/>
+  <tosca_nodes_root xsi:type="CloudModel:DataFlow" name="SensorEvaluationSWToSensorDashboard" amountOfDataInGB="2.5" transfersTo="//@tosca_nodes_root.11 //@tosca_nodes_root.12"/>
+  <tosca_nodes_root xsi:type="CloudModel:StoredDataSet" name="Stored Data Set of Customer Data" consistsOf="//@tosca_nodes_root.28" storedIn="//@tosca_nodes_root.30" createdBySoftwareComponent="//@tosca_nodes_root.9"/>
+  <tosca_nodes_root xsi:type="CloudModel:Record" name="Customer data" partOf="//@tosca_nodes_root.27"/>
+  <tosca_nodes_root xsi:type="CloudModel:Database" name="DatabaseOnFog" hostedOn="//@tosca_nodes_root.32"/>
+  <tosca_nodes_root xsi:type="CloudModel:Database" name="DatabaseOnCloud" hostedOn="//@tosca_nodes_root.31" stores="//@tosca_nodes_root.27"/>
+  <tosca_nodes_root xsi:type="CloudModel:DBMS" name="DBMSOnCloud" hostedOn="//@tosca_nodes_root.13" hosts="//@tosca_nodes_root.30" accessedBySoftwareComponent="//@tosca_nodes_root.9"/>
+  <tosca_nodes_root xsi:type="CloudModel:DBMS" name="DBMSOnFog" hostedOn="//@tosca_nodes_root.14" hosts="//@tosca_nodes_root.29"/>
+</CloudModel:CloudEnvironment>
