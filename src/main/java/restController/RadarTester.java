@@ -55,7 +55,8 @@ public class RadarTester {
 	public final String filepathToDiagramFormat = new File(System.getProperty("user.dir")).getAbsolutePath()
 			+ File.separator + "performanceTest" + File.separator + "diagramFormat.csv";
 	public final String filepathToNewTest = new File(System.getProperty("user.dir")).getAbsolutePath() + File.separator
-			+ "performanceTest" + File.separator + "newTest.csv";
+			+ "results" + File.separator
+			+ "outsideEU" + File.separator + "newTest.csv";
 
 	// Which model do you want to use?
 	static final String fileName = "CloudExample.cloudmodel";
@@ -147,14 +148,16 @@ public class RadarTester {
 				}
 
 				// Inject random PCP
-				int pcpRuleIndex = PCPTypes.STOREDATAOUTSIDEEU; // Change to SensitiveDataOnCloud for other adaptation,
-																// or use the Custom variable for the adaptation made by
+				int pcpRuleIndex = PCPTypes.STOREDATAOUTSIDEEU; // Change to SensitiveDataOnCloud for other
+																// adaptation,
+																// or use the Custom variable for the adaptation
+																// made by
 																// Filippo Lobisch.
 				String[] rulesToInject = new PCPChooser().getRulesToInject(pcpRuleIndex);
 
 				for (int j = 0; j <= amountOfPCPInstanceInjections; j++) {
 					// Bei wenigen PCP Instanzen erklären, dass es dann sehr schnell geht
-					int ruleToInject = ThreadLocalRandom.current().nextInt(0, 2);
+					int ruleToInject = ThreadLocalRandom.current().nextInt(0, 1);
 					injectPCPInstances(rulesToInject[ruleToInject]);
 				}
 				datas = riskFinder.startRadar(id, algorithm, String.valueOf(337), i,
