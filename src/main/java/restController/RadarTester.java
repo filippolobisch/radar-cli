@@ -128,10 +128,12 @@ public class RadarTester {
 				// Auto-generated catch block
 				e1.printStackTrace();
 			}
-			long timestamp1 = System.nanoTime();
-			String[] data1 = { String.valueOf((double) (timestamp1 - timestampZERO) / 1_000_000_000.0), "337", "0",
-					"48", "36.1872" };
-			writeDataLineByLine(insertNumberBeforeFileEnding(filepathToNewTest, maxSeconds), data1);
+			// long timestamp1 = System.nanoTime();
+			// String[] data1 = { String.valueOf((double) (timestamp1 - timestampZERO) /
+			// 1_000_000_000.0), "337", "0",
+			// "48", "36.1872" };
+			// writeDataLineByLine(insertNumberBeforeFileEnding(filepathToNewTest,
+			// maxSeconds), data1);
 
 			int amountOfPCPInstanceInjections = 0;
 			// weniger events, damit mehr Ruhepausen sind
@@ -145,7 +147,9 @@ public class RadarTester {
 				}
 
 				// Inject random PCP
-				int pcpRuleIndex = PCPTypes.STOREDATAOUTSIDEEU;
+				int pcpRuleIndex = PCPTypes.STOREDATAOUTSIDEEU; // Change to SensitiveDataOnCloud for other adaptation,
+																// or use the Custom variable for the adaptation made by
+																// Filippo Lobisch.
 				String[] rulesToInject = new PCPChooser().getRulesToInject(pcpRuleIndex);
 
 				for (int j = 0; j <= amountOfPCPInstanceInjections; j++) {
