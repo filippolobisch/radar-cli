@@ -13,8 +13,7 @@ public class JsonConverter {
                 + "model.json";
         try {
             Object obj = parser.parse(new FileReader(filePath));
-            JSONObject jsonObject = (JSONObject) obj;
-            return jsonObject;
+            return (JSONObject) obj;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
