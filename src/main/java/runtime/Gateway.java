@@ -1,9 +1,5 @@
 package runtime;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -61,15 +57,12 @@ public class Gateway {
 		this.executor = executor;
 	}
 
-	// Creates a new Adapter for ServiceInstanceID, Starts Monitoring of its
-	// instance
-	public void registerNewAdapterTestApplication(long serviceInstanceId, String monitoringRestUrl,
-			String executionRestUrl) {
-		instanceIdToExecutionRestUrl.put(serviceInstanceId, executionRestUrl);
-		instanceIdToMonitoringRestUrl.put(serviceInstanceId, monitoringRestUrl);
+	public void registerAdapterForVaporWebServer(long id, String monitoringURL, String executionURL) {
+		instanceIdToExecutionRestUrl.put(id, executionURL);
+		instanceIdToMonitoringRestUrl.put(id, monitoringURL);
 		LinkedList<ExecutionAdapter> executionAdapters = new LinkedList<ExecutionAdapter>();
-		executionAdapters.add(new ExecutionAdapterTestApplication(serviceInstanceId, this, runtimeModelLogic));
-		instanceIdToExecutionAdapters.put(serviceInstanceId, executionAdapters);
+		executionAdapters.add(new ExecutionAdaptorVapor(runtimeModelLogic));
+		instanceIdToExecutionAdapters.put(id, executionAdapters);
 	}
 
 	// Stops Monitoring for ServiceInstanceID and also deletes the instance in the

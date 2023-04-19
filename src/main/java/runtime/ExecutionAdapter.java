@@ -1,5 +1,6 @@
 package runtime;
 
+import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 
 import restassured.riskpattern.CloudModel.CloudEnvironment;
@@ -24,5 +25,5 @@ public abstract class ExecutionAdapter {
 		this.countDownLatch = countDownLatch;
 	}
 
-	public abstract boolean execute(CloudEnvironment proposal, int[] adaptationCaseNumber);
+	public abstract boolean execute(CloudEnvironment proposal, ArrayList<Integer> adaptationCaseNumber);
 }
