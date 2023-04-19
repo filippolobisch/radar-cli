@@ -56,7 +56,7 @@ public class RadarTester {
 			+ File.separator + "performanceTest" + File.separator + "diagramFormat.csv";
 	public final String filepathToNewTest = new File(System.getProperty("user.dir")).getAbsolutePath() + File.separator
 			+ "results" + File.separator
-			+ "outsideEU" + File.separator + "newTest.csv";
+			+ "unauthorizedAccess" + File.separator + "newTest.csv";
 
 	// Which model do you want to use?
 	static final String fileName = "CloudExample.cloudmodel";
@@ -67,7 +67,7 @@ public class RadarTester {
 	private ArrayList<RandomizedAdaptationRule> randomizedAdaptationRules;
 	boolean oldEnlargementMethod;
 
-	private void injectPCPInstances(String henshinRuleName) {
+	public void injectPCPInstances(String henshinRuleName) {
 		HenshinResourceSet resourceSet = new HenshinResourceSet(Constants.ADAPTATIONS_PATH);
 		Module module = resourceSet.getModule("PCPInjection.henshin", false);
 		EGraph graph = new EGraphImpl(
@@ -88,6 +88,7 @@ public class RadarTester {
 		runtimeModelLogic.getLoader().setCloudEnvironmentsMonitored(newModel, 1L);
 	}
 
+	@SuppressWarnings(value = { "all" })
 	@RequestMapping(path = "/performanceTest", method = RequestMethod.GET)
 	public String performanceTests() {
 		// Which enlargement method do you want to use?
@@ -148,17 +149,11 @@ public class RadarTester {
 				}
 
 				// Inject random PCP
-				int pcpRuleIndex = PCPTypes.STOREDATAOUTSIDEEU; // Change to SensitiveDataOnCloud for other
-																// adaptation,
-																// or use the Custom variable for the adaptation
-																// made by
-																// Filippo Lobisch.
-				String[] rulesToInject = new PCPChooser().getRulesToInject(pcpRuleIndex);
-
+				ArrayList<String> pcpRulesToInject = new PCPChooser().choosePCPs();
 				for (int j = 0; j <= amountOfPCPInstanceInjections; j++) {
 					// Bei wenigen PCP Instanzen erklären, dass es dann sehr schnell geht
-					int ruleToInject = ThreadLocalRandom.current().nextInt(0, 1);
-					injectPCPInstances(rulesToInject[ruleToInject]);
+					int ruleToInject = ThreadLocalRandom.current().nextInt(0, pcpRulesToInject.size());
+					injectPCPInstances(pcpRulesToInject.get(ruleToInject));
 				}
 				datas = riskFinder.startRadar(id, algorithm, String.valueOf(337), i,
 						maxSeconds, cloudEnvironment, timestampZERO);
@@ -176,8 +171,8 @@ public class RadarTester {
 						}
 					}
 					// Nur schlafen, wenn keine PCP Instanzen vorhanden sind!
-					int timeToSleep = ThreadLocalRandom.current().nextInt(120000, 180000 + 1);
-					Thread.sleep(timeToSleep);
+					// int timeToSleep = ThreadLocalRandom.current().nextInt(120000, 180000 + 1);
+					Thread.sleep(120000);
 					long timestamp = System.nanoTime();
 					String[] data = { String.valueOf((double) (timestamp - timestampZERO) / 1_000_000_000.0),
 							datas.getLast()[1], datas.getLast()[2], datas.getLast()[3], datas.getLast()[4] };
