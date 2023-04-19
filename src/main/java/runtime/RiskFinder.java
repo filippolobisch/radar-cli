@@ -1,6 +1,10 @@
 package runtime;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -14,6 +18,9 @@ import org.eclipse.emf.henshin.model.Module;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import helpers.PCPChooser;
+import helpers.PCPTypes;
 import restController.RadarTester;
 import restassured.riskpattern.CloudModel.CloudEnvironment;
 import riskpatternfinder.AdaptationFinderToImproveSystem;
@@ -31,6 +38,8 @@ public class RiskFinder {
 	@Autowired
 	private RuntimeModelLogic runtimeModelLogic;
 	@Autowired
+	EMFModelLoad loader;
+	@Autowired
 	RadarTester radarTester;
 	private Engine engine = new EngineImpl();
 	private long startTime = 0;
@@ -39,7 +48,7 @@ public class RiskFinder {
 	private long timestampZERO;
 
 	public LinkedList<String[]> startRadar(long index, AdaptationAlgorithm aa, String enlargement, int testnumber,
-			int maxSeconds, CloudEnvironment cloudEnvironment, long timestamptZERO) {
+										   int maxSeconds, CloudEnvironment cloudEnvironment, long timestamptZERO) {
 		this.timestampZERO = timestamptZERO;
 		LinkedList<String[]> datas = this.lookForRisks(cloudEnvironment, index, aa, enlargement, testnumber,
 				maxSeconds);
@@ -71,7 +80,7 @@ public class RiskFinder {
 	}
 
 	private void lookForImprovements(CloudEnvironment cloudEnvironment, long index, AdaptationAlgorithm aa,
-			int maxSeconds) {
+									 int maxSeconds) {
 		AdaptationFinderToImproveSystem adaptationFinder = new AdaptationFinderToImproveSystem(engine);
 		AdaptationCombinationRepresentation[] possibleAdaptations = adaptationFinder.generatePossibleAdaptations(
 				cloudEnvironment, aa, radarTester.getRandomizedAdaptationRules(), maxSeconds, 0, null, "");
@@ -106,9 +115,151 @@ public class RiskFinder {
 		}
 	}
 
+	public void printMessageWithDateTime(String message) {
+		LocalDateTime localDateTime = LocalDateTime.now();
+		String fullMessageString = localDateTime.toString() + "\t" + message;
+		System.out.println(fullMessageString);
+	}
+
+	public void runExperiment(String model, CloudEnvironment cloudEnvironment, long monitoredEnvironmentId,
+							  RuntimeModelLogic runtimeModelLogic) {
+		AdaptationAlgorithm adaptationAlgorithm = AdaptationAlgorithm.BestFirstSearch;
+		int seconds = 10;
+		long experimentStartTime = System.currentTimeMillis();
+
+		for (int i = 0; i < seconds; i++) {
+			printMessageWithDateTime(String.format("Starting loop run with index %d...", i));
+			long testRunStartTime = System.currentTimeMillis();
+			if ((testRunStartTime - experimentStartTime) >= 600000) {
+				printMessageWithDateTime(String.format("Start time of test with index %d is greater than 10 minutes. Exiting...", i));
+				break;
+			}
+
+			printMessageWithDateTime("Setting cloud environment...");
+			try {
+				cloudEnvironment = (CloudEnvironment) loader.loadEObjectFromString(model);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			loader.setCloudEnvironmentsMonitored(cloudEnvironment, monitoredEnvironmentId);
+			printMessageWithDateTime("Cloud environment loaded and set.");
+
+			printMessageWithDateTime("Injecting vulnerabilities...");
+			int amountOfPCPInstanceInjections = 0;
+			double probability = Math.random();
+			if (probability >= 0.75) {
+				amountOfPCPInstanceInjections = ThreadLocalRandom.current().nextInt(15, 21);
+			} else {
+				amountOfPCPInstanceInjections = ThreadLocalRandom.current().nextInt(1, 6);
+			}
+
+			ArrayList<String> rulesToInject = PCPTypes.STOREDATAOUTSIDEEU;
+			for (int j = 0; j <= amountOfPCPInstanceInjections; j++) {
+				int ruleToInject = ThreadLocalRandom.current().nextInt(0, rulesToInject.size());
+				radarTester.injectPCPInstances(rulesToInject.get(ruleToInject));
+			}
+
+			printMessageWithDateTime(String.format("Injected %d vulnerabilities", amountOfPCPInstanceInjections));
+
+			runtimeModelLogic.getLoader().setCloudEnvironmentsMonitored(cloudEnvironment, 1);
+
+			long newMonitoredEnvironmentId = 1L;
+			cloudEnvironment = runtimeModelLogic.getLoader().getCloudEnvironmentsMonitored()
+					.get(newMonitoredEnvironmentId);
+
+
+			lookForRisks2(cloudEnvironment,
+					newMonitoredEnvironmentId,
+					adaptationAlgorithm, 10, runtimeModelLogic,
+					testRunStartTime);
+
+			try {
+				Thread.sleep(60000); // Sleep for 60 seconds at the end of each experiment run.
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+
+		System.out.println("Experiment finished!");
+	}
+
+	@SuppressWarnings(value = { "all" })
+	public LinkedList<String[]> lookForRisks2(CloudEnvironment cloudEnvironment, long index,
+											  AdaptationAlgorithm adaptationAlgorithm, int maxSeconds,
+											  RuntimeModelLogic runtimeModelLogic, long testRunStartTime) {
+
+		LinkedList<String[]> dataLinkedList = new LinkedList<String[]>();
+		String[] data = {};
+		String enlargement = String.valueOf(cloudEnvironment.eContents().size());
+
+		if (enlargement == null) {
+			enlargement = String.valueOf(337);
+		}
+
+		printMessageWithDateTime("Looking for possible adaptations...");
+		// look for possible adaptations.
+		AdaptationFinderToMitigateRisks adaptationFinder = new AdaptationFinderToMitigateRisks();
+		AdaptationCombinationRepresentation[] effectiveAdaptations = adaptationFinder.generatePossibleAdaptations(
+				cloudEnvironment, adaptationAlgorithm, radarTester.getRandomizedAdaptationRules(), maxSeconds,
+				testRunStartTime, dataLinkedList,
+				enlargement);
+
+
+		printMessageWithDateTime("Finished looking for possible adaptations.");
+		long timestampAfterAdaptationSearch = System.currentTimeMillis();
+
+		String amountOfPCPInstances = "0";
+		if (adaptationFinder.getFirstFoundRisks() != null) {
+			amountOfPCPInstances = String.valueOf(adaptationFinder.getFirstFoundRisks().size());
+		}
+
+		String searchTime = String.valueOf((double) timestampAfterAdaptationSearch - testRunStartTime);
+
+		String foundPCPInstances = "";
+		for (MatchRepresentation matchRep : adaptationFinder.getFirstFoundRisks()) {
+			foundPCPInstances += "Risk: \"" + matchRep.getRuleName() + "\" | ";
+		}
+
+		if (effectiveAdaptations == null || effectiveAdaptations.length == 0) {
+			String[] dataValues = { searchTime, enlargement, amountOfPCPInstances, foundPCPInstances };
+			dataLinkedList.add(dataValues);
+			printMessageWithDateTime("No adaptations for this vulnerability found. Returning...");
+			return dataLinkedList;
+		}
+
+		printMessageWithDateTime("Computing adaptation IDs to send to server.");
+		ArrayList<Integer> adaptationsIDs = new ArrayList<Integer>();
+		for (AdaptationCombinationRepresentation adaptation : effectiveAdaptations) {
+			String usedAdaptations = "";
+
+			for (AtomicAdaptation adap : adaptation.getAtomicAdaptationArray()) {
+				usedAdaptations += adap.getRiskRuleName() + ": Adaptation_" + adap.getAdaptationType() + "_"
+						+ adap.getAdaptationIndex() + " | ";
+				adaptationsIDs.add(adap.getAdaptationType());
+			}
+
+			break;
+		}
+
+		printMessageWithDateTime("Computed adaptation IDs to send to server.");
+		printMessageWithDateTime("Sending adaptation to server.");
+		ExecutionAdaptorVapor vapor = new ExecutionAdaptorVapor(runtimeModelLogic);
+		boolean result = vapor.execute(cloudEnvironment, adaptationsIDs);
+		printMessageWithDateTime(result ? "Adaptations sent to server." : "Failed to send adaptations to server.");
+
+		for (AdaptationCombinationRepresentation adaptation : effectiveAdaptations) {
+			Integer pcpInstances = Integer.valueOf(amountOfPCPInstances);
+			List<String[]> tester = executeAdaptations2(adaptation, dataLinkedList, enlargement, pcpInstances);
+			break;
+		}
+
+		return dataLinkedList;
+	}
+
 	@SuppressWarnings(value = { "all" })
 	public LinkedList<String[]> lookForRisks(CloudEnvironment cloudEnvironment, long index, AdaptationAlgorithm aa,
-			String enlargement, int testnumber, int maxSeconds) {
+											 String enlargement, int testnumber, int maxSeconds) {
 		// BEGIN TO MEASURE
 		LinkedList<String[]> datas = new LinkedList<String[]>();
 		String[] data = null;
@@ -168,9 +319,13 @@ public class RiskFinder {
 
 				System.err.println("Risk(s) found without possible adaptation: ");
 				String foundPCPInstances = "";
+				String risks = "Risks: ";
+				String adaptations = "Adaptations executed: ";
+
 				for (MatchRepresentation matchRep : adaptationFinder.getFirstFoundRisks()) {
 					System.err.println("     Risk: \"" + matchRep.getRuleName() + "\"");
 					foundPCPInstances += "Risk: \"" + matchRep.getRuleName() + "\" | ";
+					risks += "\"" + matchRep.getRuleName() + "\"";
 				}
 				Model nonPerfectSolution = adaptationFinder.lookForRisksInNonPerfectSolution();
 				CloudEnvironment proposal = (CloudEnvironment) nonPerfectSolution.getRuntimeModel().getRoots().get(0);
@@ -247,6 +402,7 @@ public class RiskFinder {
 						usedAdaptations += adap.getRiskRuleName() + ": Adaptation_" + adap.getAdaptationType() + "_"
 								+ adap.getAdaptationIndex() + " | ";
 						adaptationCaseNumber[j] = adap.getAdaptationType();
+						System.out.println(adap.getAdaptationType());
 						j++;
 					}
 
@@ -295,7 +451,7 @@ public class RiskFinder {
 	}
 
 	private LinkedList<String[]> executeAdaptations(Model model, LinkedList<String[]> datas, String enlargement,
-			int maxAmountOfPCPInstanes) {
+													int maxAmountOfPCPInstanes) {
 		CloudEnvironment proposal = (CloudEnvironment) model.getRuntimeModel().getRoots().get(0);
 		runtimeModelLogic.getLoader().setCloudEnvironmentsMonitored(proposal, 1L);
 		Adaptation[] ar = model.getAdaptations();
@@ -342,18 +498,14 @@ public class RiskFinder {
 	}
 
 	private LinkedList<String[]> executeAdaptations2(AdaptationCombinationRepresentation adaptation,
-			LinkedList<String[]> datas, String enlargement, int maxAmountOfPCPInstanes) {
+													 LinkedList<String[]> datas, String enlargement, int maxAmountOfPCPInstanes) {
 		CloudEnvironment proposal = (CloudEnvironment) adaptation.getRuntimeModel();
 		runtimeModelLogic.getLoader().setCloudEnvironmentsMonitored(proposal, 1L);
 		AtomicAdaptation[] ar = adaptation.getAtomicAdaptationArray();
 		shuffleArray(ar);
 		for (int i = 0; i < ar.length; i++) {
 			try {
-				if (ar[i].getRiskRuleName().equals("OutsideEU")) {
-					Thread.sleep(10000);
-				} else {
-					Thread.sleep(4000);
-				}
+				Thread.sleep(4000);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -368,7 +520,7 @@ public class RiskFinder {
 			long timestamp = System.nanoTime();
 			String[] values = { String.valueOf((double) ((timestamp - timestampZERO) / 1_000_000_000.0)), enlargement,
 					newAmountOfPCPInstances, String.valueOf(adaptation.getWorkingFunctions()),
-					String.valueOf(adaptation.getTotalCost()) };
+					String.valueOf(adaptation.getTotalCost()), String.valueOf(adaptation) };
 			datas.add(values);
 			System.out.println("PCP Instances = " + newAmountOfPCPInstances);
 		}
@@ -394,10 +546,10 @@ public class RiskFinder {
 	}
 
 	private String[] setData(String algorithmusname, String modellvergroesserung, String versuchsnummer,
-			String genutzteZeit, String genutzteZeitBisBesteLoesung, String erkanntePCPInstanzen,
-			String angewendeteAdaptionen, String zurueckgebleiebenePCPInstanzen, String anzahlFunktionseinschraenkungen,
-			String kosten, String henshinAufrufe, String zeitPCPInstanzSuche, String zeitAdaptionsAusführung,
-			String zeitWFBerechnung, String zeitKostenBerechnung, String zeitEMFCompareMethode, String zeitBFSCompare) {
+							 String genutzteZeit, String genutzteZeitBisBesteLoesung, String erkanntePCPInstanzen,
+							 String angewendeteAdaptionen, String zurueckgebleiebenePCPInstanzen, String anzahlFunktionseinschraenkungen,
+							 String kosten, String henshinAufrufe, String zeitPCPInstanzSuche, String zeitAdaptionsAusführung,
+							 String zeitWFBerechnung, String zeitKostenBerechnung, String zeitEMFCompareMethode, String zeitBFSCompare) {
 		String[] data = { algorithmusname, modellvergroesserung, versuchsnummer, genutzteZeit,
 				genutzteZeitBisBesteLoesung, erkanntePCPInstanzen, angewendeteAdaptionen,
 				zurueckgebleiebenePCPInstanzen, anzahlFunktionseinschraenkungen, kosten, henshinAufrufe,

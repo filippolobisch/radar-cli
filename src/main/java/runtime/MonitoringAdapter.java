@@ -12,17 +12,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLDecoder;
-import java.nio.charset.Charset;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import restassured.riskpattern.CloudModel.CloudEnvironment;
 import riskpatternfinder.AdaptationFinderToMitigateRisks.AdaptationAlgorithm;
 import utility.Constants;
@@ -106,7 +100,6 @@ public class MonitoringAdapter implements Runnable {
 			URL url = new URL(monitoringAdress);
 			HttpURLConnection request = (HttpURLConnection) url.openConnection();
 			request.setRequestMethod("GET");
-			long timestamp = System.currentTimeMillis();
 
 			BufferedReader bodyReader = new BufferedReader(new InputStreamReader(request.getInputStream()));
 			String body = "";
