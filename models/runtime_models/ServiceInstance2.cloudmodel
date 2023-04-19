@@ -20,7 +20,7 @@
   <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" name="B :SoftwareComponent" hostedOn="//@tosca_nodes_root.20" accessDBMS="//@tosca_nodes_root.6" controlledBy="//@tosca_nodes_root.18"/>
   <tosca_nodes_root xsi:type="CloudModel:DataController" name="B :DataController" controls="//@tosca_nodes_root.17"/>
   <tosca_nodes_root xsi:type="CloudModel:IaaSOperator" name="V :IaaSOperator" operatesCompute="//@tosca_nodes_root.20 //@tosca_nodes_root.21"/>
-  <tosca_nodes_root xsi:type="CloudModel:Compute" name="D :Compute" hosts="//@tosca_nodes_root.17 //@tosca_nodes_root.122 //@tosca_nodes_root.101 //@tosca_nodes_root.80 //@tosca_nodes_root.59 //@tosca_nodes_root.38 //@tosca_nodes_root.227 //@tosca_nodes_root.206 //@tosca_nodes_root.185 //@tosca_nodes_root.164 //@tosca_nodes_root.143 //@tosca_nodes_root.269 //@tosca_nodes_root.248 //@tosca_nodes_root.332 //@tosca_nodes_root.318 //@tosca_nodes_root.311 //@tosca_nodes_root.297 //@tosca_nodes_root.290" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.19" usageCostPerDay="0.552"/>
+  <tosca_nodes_root xsi:type="CloudModel:Compute" name="D :Compute" hosts="//@tosca_nodes_root.17 //@tosca_nodes_root.122 //@tosca_nodes_root.101 //@tosca_nodes_root.80 //@tosca_nodes_root.59 //@tosca_nodes_root.38 //@tosca_nodes_root.227 //@tosca_nodes_root.206 //@tosca_nodes_root.185 //@tosca_nodes_root.164 //@tosca_nodes_root.143 //@tosca_nodes_root.332 //@tosca_nodes_root.311 //@tosca_nodes_root.290 //@tosca_nodes_root.269 //@tosca_nodes_root.248" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.19" usageCostPerDay="0.552"/>
   <tosca_nodes_root xsi:type="CloudModel:Compute" name="E :Compute" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.19" usageCostPerDay="2.2272"/>
   <tosca_nodes_root xsi:type="CloudModel:IaaSOperator" operatesCompute="//@tosca_nodes_root.23"/>
   <tosca_nodes_root xsi:type="CloudModel:Compute" hosts="//@tosca_nodes_root.24" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.22" usageCostPerDay="1.1136"/>
@@ -296,8 +296,8 @@
   <tosca_nodes_root xsi:type="CloudModel:Compute" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.292" usageCostPerDay="0.552"/>
   <tosca_nodes_root xsi:type="CloudModel:Compute" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.292" usageCostPerDay="2.2272"/>
   <tosca_nodes_root xsi:type="CloudModel:IaaSOperator" operatesCompute="//@tosca_nodes_root.296"/>
-  <tosca_nodes_root xsi:type="CloudModel:Compute" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.295" usageCostPerDay="1.1136"/>
-  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" hostedOn="//@tosca_nodes_root.20" accessDBMS="//@tosca_nodes_root.304" controlledBy="//@tosca_nodes_root.298"/>
+  <tosca_nodes_root xsi:type="CloudModel:Compute" hosts="//@tosca_nodes_root.297" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.295" usageCostPerDay="1.1136"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" hostedOn="//@tosca_nodes_root.296" accessDBMS="//@tosca_nodes_root.304" controlledBy="//@tosca_nodes_root.298"/>
   <tosca_nodes_root xsi:type="CloudModel:DataController" controls="//@tosca_nodes_root.297 //@tosca_nodes_root.304"/>
   <tosca_nodes_root xsi:type="CloudModel:SaaSOperator" operates="//@tosca_nodes_root.301"/>
   <tosca_nodes_root xsi:type="CloudModel:DataFlow" consistsOf="//@tosca_nodes_root.302" streamsTo="//@tosca_nodes_root.303"/>
@@ -317,8 +317,8 @@
   <tosca_nodes_root xsi:type="CloudModel:Compute" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.313" usageCostPerDay="0.552"/>
   <tosca_nodes_root xsi:type="CloudModel:Compute" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.313" usageCostPerDay="2.2272"/>
   <tosca_nodes_root xsi:type="CloudModel:IaaSOperator" operatesCompute="//@tosca_nodes_root.317"/>
-  <tosca_nodes_root xsi:type="CloudModel:Compute" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.316" usageCostPerDay="1.1136"/>
-  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" hostedOn="//@tosca_nodes_root.20" accessDBMS="//@tosca_nodes_root.325" controlledBy="//@tosca_nodes_root.319"/>
+  <tosca_nodes_root xsi:type="CloudModel:Compute" hosts="//@tosca_nodes_root.318" jurisdiction="EU" operatedByIaaSOperator="//@tosca_nodes_root.316" usageCostPerDay="1.1136"/>
+  <tosca_nodes_root xsi:type="CloudModel:SoftwareComponent" hostedOn="//@tosca_nodes_root.317" accessDBMS="//@tosca_nodes_root.325" controlledBy="//@tosca_nodes_root.319"/>
   <tosca_nodes_root xsi:type="CloudModel:DataController" controls="//@tosca_nodes_root.318 //@tosca_nodes_root.325"/>
   <tosca_nodes_root xsi:type="CloudModel:SaaSOperator" operates="//@tosca_nodes_root.322"/>
   <tosca_nodes_root xsi:type="CloudModel:DataFlow" consistsOf="//@tosca_nodes_root.323" streamsTo="//@tosca_nodes_root.324"/>
